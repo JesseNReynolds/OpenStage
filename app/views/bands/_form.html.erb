@@ -11,6 +11,13 @@
     </div>
   <% end %>
 
+  <%= form.label "Name" %>
+  <%= form.text_field :name %>
+  <br>
+  <%= form.label "Description" %>
+  <%= form.text_area :bio, placeholder: "We play bluegrass and post-psychadelic-funk-metal." %>
+  <br>
+
   <div class="actions">
     <%= form.submit %>
   </div>
