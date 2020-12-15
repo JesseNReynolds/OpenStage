@@ -4,6 +4,7 @@
         [x] can sign in... and out
         [x] can create bands
         [ ] can update bios from their own profile page
+
     [ ] Bands
         [x] can be created
         [ ] can invite users to join
@@ -24,3 +25,12 @@
         [ ] can be approved
         [ ] can be denied
         [ ] if denied, they replace themselves with a new available instance
+
+# Cleanup
+    [ ] Visit each route and make sure it's present and relevant. Delete or refactor as needed.
+
+# Style
+    [ ] Choose colors
+        https://coolors.co/122c34-cc3f0c-3c1518-60afff-7e8987
+    [ ] Layout template
+    [ ] First pass styling each page
