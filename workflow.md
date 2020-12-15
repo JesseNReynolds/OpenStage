@@ -1,11 +1,11 @@
 # What's next:
-    [x] Users
+    [ ] Users
         [x] can sign up
-        [x] can sign in
-        [ ] can create bands
+        [x] can sign in... and out
+        [x] can create bands
         [ ] can update bios from their own profile page
     [ ] Bands
-        [ ] can be created
+        [x] can be created
         [ ] can invite users to join
         [ ] can request available gigs
         
@@ -15,7 +15,7 @@
 
     [ ] Venues
         [ ] can sign up
-        [ ] can sign in
+        [ ] can sign in and out
         [ ] can post gigs as available
 
     [ ] Gigs

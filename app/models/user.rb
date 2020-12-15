@@ -14,11 +14,11 @@ class User < ApplicationRecord
         !!session[:user_id]
     end
 
-    def self.current_user_id(seesion)
+    def self.current_user_id(session)
         session[:user_id]
     end
 
-    def self.current_user(seesion)
+    def self.current_user(session)
         User.find(session[:user_id])
     end
 end

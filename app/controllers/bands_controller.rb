@@ -15,8 +15,7 @@ class BandsController < ApplicationController
     if User.is_logged_in?(session)
       @band = Band.new
     else
-      redirect_to '/error'
-      @error = "You must be logged in as a user to create a band."
+      redirect_to bands_path, notice: "You must be logged in as a user to create a band."
     end
   end
 
@@ -60,6 +59,6 @@ end
 
     # Only allow a list of trusted parameters through.
     def band_params
-      params.fetch(:band, {})
+      params.require(:band).permit(:name, :bio)
     end
 end
