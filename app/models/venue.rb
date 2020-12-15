@@ -1,5 +1,7 @@
 class Venue < ApplicationRecord
 
-    has_many :gigs
+    has_secure_password
     
+    has_many :gigs
+
 end
