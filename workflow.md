@@ -15,6 +15,7 @@
 -   [ ] displays all users involved
 
 - [ ] Venues
+-   [ ] add columns city and state
 -   [ ] can sign up
 -   [ ] can sign in and out
 -   [ ] can post gigs as available

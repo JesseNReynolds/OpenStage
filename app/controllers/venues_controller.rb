@@ -58,4 +58,5 @@ class VenuesController < ApplicationController
     def venue_params
       params.fetch(:venue, {})
     end
+    
 end
