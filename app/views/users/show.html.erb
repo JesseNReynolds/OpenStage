@@ -2,5 +2,7 @@
 
 <h1><%= @user.name %></h1>
 
-<%= link_to 'Edit', edit_user_path(@user) %> |
+<p><%= @user.bio %></p>
+<%= link_to "Bio", bio_path %>
+<br>
 <%= link_to 'Back', users_path %>

@@ -1,9 +1,9 @@
 # What's next:
-    [ ] Users
+    [x] Users
         [x] can sign up
         [x] can sign in... and out
         [x] can create bands
-        [ ] can update bios from their own profile page
+        [x] can update bios from their own profile page
 
     [ ] Bands
         [x] can be created

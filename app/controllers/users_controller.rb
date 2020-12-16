@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:show, :edit, :update, :destroy]
+  before_action :set_user, only: [:show, :edit, :update, :destroy, :bio]
 
   # GET /users
   def index
@@ -8,7 +8,6 @@ class UsersController < ApplicationController
 
   # GET /users/1
   def show
-    @user = User.find(params[:id])
   end
 
   # GET /users/new
@@ -34,12 +33,16 @@ class UsersController < ApplicationController
 
   # PATCH/PUT /users/1
   def update
-  
+
     if @user.update(user_params)
       redirect_to @user, notice: 'User was successfully updated.'
     else
       render :edit
     end
+
+  end
+
+  def bio
   end
 
   # DELETE /users/1

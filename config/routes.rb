@@ -7,7 +7,8 @@ Rails.application.routes.draw do
   resources :bands
   
   resources :users
-  
+  get '/users/:id/bio', to: 'users#bio', as: 'bio'
+
   resources :sessions, only: [:create]
   get '/login', to: 'sessions#login', as: 'login'
   get '/logout', to: 'sessions#destroy', as: 'logout'

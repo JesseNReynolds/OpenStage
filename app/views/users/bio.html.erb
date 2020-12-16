@@ -1,0 +1,13 @@
+<p id="notice"><%= notice %></p>
+
+<h1><%= @user.name %></h1>
+
+
+
+<% if @user.id == User.current_user_id(session) %>
+    <%= render partial: 'bio_form' %>
+<% else %>
+    <p><%= @user.bio %></p>
+<% end %>
+
+<%= link_to 'Back', users_path %>
