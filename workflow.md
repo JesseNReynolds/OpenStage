@@ -21,14 +21,16 @@
 -   [ ] can post gigs as available
 
 - [ ] Gigs
--   [ ] can be created
+-   [x] can be created
+-   [ ] field for date AND time
+        look into https://github.com/shekibobo/time_splitter
 -   [ ] can be claimed
 -   [ ] can be approved
 -   [ ] can be denied
 -   [ ] if denied, they replace themselves with a new available instance
 
 # Cleanup
-- [ ] Visit each route and make sure it's present and relevant. Delete or refactor as needed.
+- [ ] Visit each route and make sure it's present and relevant. Delete, add, or refactor as needed.
 
 # Style
 - [ ] Choose colors

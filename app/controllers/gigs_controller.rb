@@ -9,11 +9,15 @@ class GigsController < ApplicationController
     end
 
     def new
-        @gig = Gig.new(band_id: nil, venue_id: nil)
+        if Venue.is_logged_in?(session)
+            @gig = Gig.new
+        else
+            redirect_to gigs_path, notice: "You must be logged in as a venue to create gigs."
+        end
     end
 
     def create
-        @gig = Gig.new(gig_params)
+        @gig = Gig.new(gig_create_params)
 
         if @gig.save
             redirect_to @gig
@@ -35,6 +39,12 @@ class GigsController < ApplicationController
     end
 
     def gig_params
-        params.require(:gig).permit(:venue_id, :time, :duration)
+        params.require(:gig).permit(:time, :duration)
     end
+
+    def gig_create_params
+        params[:gig][:venue_id] = Venue.current_venue_id(session)
+        params.require(:gig).permit(:time, :duration, :venue_id)
+    end
+
 end
