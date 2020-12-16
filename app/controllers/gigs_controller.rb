@@ -2,14 +2,14 @@ class GigsController < ApplicationController
     before_action :set_gig, only: [:show]
 
     def index
-        @gigs = Gigs.all
+        @gigs = Gig.all
     end
 
     def show
     end
 
     def new
-        @gig = Gig.new
+        @gig = Gig.new(band_id: nil, venue_id: nil)
     end
 
     def create
@@ -20,10 +20,14 @@ class GigsController < ApplicationController
         else
             render :new
         end
-        
+
     end
 
-
+    def destroy
+        @gig.destroy
+        redirect_to gigs_path, notice: 'Gig deleted.'
+    end
+    
     private
 
     def set_gig
@@ -32,4 +36,5 @@ class GigsController < ApplicationController
 
     def gig_params
         params.require(:gig).permit(:venue_id, :time, :duration)
+    end
 end

@@ -1,0 +1,10 @@
+<div>
+<% @gigs.each do |gig| %>
+    <div>
+        <%= gig.venue %>
+        <%= gig.time %>
+        <%= link_to gig %>
+    </div>
+<% end %>
+
+</div>
