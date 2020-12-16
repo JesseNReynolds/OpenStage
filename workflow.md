@@ -16,7 +16,7 @@
 
 - [ ] Venues
 -   [x] add columns city and state
--   [ ] can sign up
+-   [x] can sign up
 -   [x] can sign in and out
 -   [ ] can post gigs as available
 
