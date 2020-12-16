@@ -1,3 +1,12 @@
+# Hopeful schedule
+        Thursday:
+                nested routes for band members
+                Bands claim gigs
+                Venues approve or deny gigs, gigs auto replace when denied or have deny and replace listing option
+        Friday:
+                Cleanup
+                Style
+                
 # What's next:
 - [x] Users
 -   [x] can sign up
