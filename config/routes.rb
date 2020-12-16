@@ -14,6 +14,8 @@ Rails.application.routes.draw do
   
   resources :bands
   
+  resources :gigs
+
   resources :users
   get '/users/:id/bio', to: 'users#bio', as: 'bio'
 
