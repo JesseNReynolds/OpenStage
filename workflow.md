@@ -35,3 +35,7 @@
         https://coolors.co/122c34-cc3f0c-3c1518-60afff-7e8987
 - [ ] Layout template
 - [ ] First pass styling each page
+
+# Polish
+- [ ] City and State check against array of known good cities and states
+
