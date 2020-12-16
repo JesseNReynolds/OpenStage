@@ -5,4 +5,6 @@ class Band < ApplicationRecord
     has_many :users, through: :band_members
     has_many :gigs
 
+    validates :name, presence: true
+
 end
