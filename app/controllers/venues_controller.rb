@@ -17,6 +17,12 @@ class VenuesController < ApplicationController
 
   # GET /venues/1/edit
   def edit
+
+    if @venue.id == Venue.current_venue_id(session)
+    else
+      redirect_to venues_path notice: "You must be logged in to edit your info page."
+    end
+    
   end
 
   # POST /venues
@@ -24,6 +30,7 @@ class VenuesController < ApplicationController
     @venue = Venue.new(venue_params)
 
     if @venue.save
+      session[:venue_id] = @venue.id
       redirect_to @venue, notice: 'Venue was successfully created.'
     else
       render :new 

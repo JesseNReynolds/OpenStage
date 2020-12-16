@@ -3,6 +3,8 @@ Rails.application.routes.draw do
   root 'application#home'
 
   resources :venues
+  get '/venues/:id/description', to: 'venue#description', as: 'description'
+
   
   resources :bands
   
