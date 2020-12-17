@@ -15,7 +15,6 @@ Rails.application.routes.draw do
 
   
   resources :bands do
-    resources :members
     resources :gigs, only: [:index]
   end
   
