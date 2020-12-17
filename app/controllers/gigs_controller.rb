@@ -17,8 +17,8 @@ class GigsController < ApplicationController
     end
 
     def create
-        @gig = Gig.new(gig_create_params)
-
+        @gig = Gig.new(gig_params)
+        @gig.venue_id = Venue.current_venue_id(session)
         if @gig.save
             redirect_to @gig
         else
@@ -40,11 +40,6 @@ class GigsController < ApplicationController
 
     def gig_params
         params.require(:gig).permit(:time, :duration)
-    end
-
-    def gig_create_params
-        params[:gig][:venue_id] = Venue.current_venue_id(session)
-        params.require(:gig).permit(:time, :duration, :venue_id)
     end
 
 end

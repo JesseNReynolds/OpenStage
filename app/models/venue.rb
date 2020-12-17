@@ -13,16 +13,4 @@ class Venue < ApplicationRecord
     validates :city, presence: true
     validates :state, presence: true
 
-    def self.is_logged_in?(session)
-        !!session[:venue_id]
-    end
-
-    def self.current_venue_id(session)
-        session[:venue_id]
-    end
-
-    def self.current_venue(session)
-        Venue.find(session[:venue_id])
-    end
-
 end

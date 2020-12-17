@@ -8,11 +8,12 @@
                 Style
                 
 # What's next:
-- [x] Users
+- [] Users
 -   [x] can sign up
 -   [x] can sign in... and out
 -   [x] can create bands
 -   [x] can update bios from their own profile page
+-   [ ] can only edit their own information
 
 - [ ] Bands
 -   [x] can be created

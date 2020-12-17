@@ -4,7 +4,7 @@
 
 
 
-<% if @user.id == User.current_user_id(session) %>
+<% if @user.id == current_user_id %>
     <%= render partial: 'bio_form' %>
 <% else %>
     <p><%= @user.bio %></p>

@@ -3,6 +3,7 @@ class VenuesController < ApplicationController
 
   # GET /venues
   def index
+    byebug
     @venues = Venue.all
   end
 
@@ -18,7 +19,7 @@ class VenuesController < ApplicationController
   # GET /venues/1/edit
   def edit
 
-    if @venue.id == Venue.current_venue_id(session)
+    if @venue.id == current_venue.id
     else
       redirect_to venues_path notice: "You must be logged in to edit your info page."
     end
