@@ -8,11 +8,16 @@ Rails.application.routes.draw do
   post '/venues/session', to: 'sessions#venue_create', as: 'venue_session'
   get '/logout', to: 'sessions#destroy', as: 'logout'
 
-  resources :venues
+  resources :venues do
+    resources :gigs, only: [:index]
+  end
   get '/venues/:id/description', to: 'venue#description', as: 'description'
 
   
-  resources :bands
+  resources :bands do
+    resources :members
+    resources :gigs, only: [:index]
+  end
   
   resources :gigs
 

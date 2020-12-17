@@ -1,11 +1,16 @@
 # Hopeful schedule
         Thursday:
                 nested routes for band members
+                nested routes for gigs
                 Bands claim gigs
-                Venues approve or deny gigs, gigs auto replace when denied or have deny and replace listing option
+                Venues approve or deny claimed gigs, gigs auto replace when denied or have deny and replace listing option
         Friday:
                 Cleanup
                 Style
+        Monday:
+                oauth
+        Tuesday:
+                Host on Heroku
                 
 # What's next:
 - [] Users
