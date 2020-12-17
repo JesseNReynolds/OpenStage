@@ -40,6 +40,7 @@
 
 # Cleanup
 - [ ] Visit each route and make sure it's present and relevant. Delete, add, or refactor as needed.
+- [ ] For each controller action, refactor with alert for errors and notice for successes, make sure each is present in view.
 
 # Style
 - [ ] Choose colors
