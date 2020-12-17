@@ -1,2 +1,6 @@
 <h1><%= @gig.time %> at <%= @gig.venue.name %></h1>
 <p id="notice"><%= notice %></p>
+
+<% if @gig.venue_id == current_venue_id %>
+    <%= link_to 'Destroy', @gig, method: :delete, data: { confirm: 'Are you sure?' } %>
+<% end %>

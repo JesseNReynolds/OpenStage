@@ -1,5 +1,5 @@
 class GigsController < ApplicationController
-    before_action :set_gig, only: [:show]
+    before_action :set_gig, only: [:show, :destroy]
 
     def index
         @gigs = Gig.all
@@ -9,7 +9,7 @@ class GigsController < ApplicationController
     end
 
     def new
-        if Venue.is_logged_in?(session)
+        if venue_is_logged_in?
             @gig = Gig.new
         else
             redirect_to gigs_path, notice: "You must be logged in as a venue to create gigs."
@@ -18,7 +18,7 @@ class GigsController < ApplicationController
 
     def create
         @gig = Gig.new(gig_params)
-        @gig.venue_id = Venue.current_venue_id(session)
+        @gig.venue_id = current_venue_id
         if @gig.save
             redirect_to @gig
         else

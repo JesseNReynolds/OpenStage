@@ -12,7 +12,7 @@ class ApplicationController < ActionController::Base
     end
 
     def current_venue_id
-        session:[venue_id]
+        session[:venue_id]
     end
 
     def current_venue
