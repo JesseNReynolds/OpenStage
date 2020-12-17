@@ -18,7 +18,7 @@
 -   [x] can sign in... and out
 -   [x] can create bands
 -   [x] can update bios from their own profile page
--   [ ] can only edit their own information
+-   [x] can only edit their own information
 
 - [ ] Bands
 -   [x] can be created

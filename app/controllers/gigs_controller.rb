@@ -28,6 +28,7 @@ class GigsController < ApplicationController
     end
 
     def destroy
+        # Should I check here for login status so bad actors cannot circumvent the check in view?
         @gig.destroy
         redirect_to gigs_path, notice: 'Gig deleted.'
     end
