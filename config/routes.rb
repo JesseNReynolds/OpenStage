@@ -18,6 +18,8 @@ Rails.application.routes.draw do
     resources :gigs, only: [:index]
   end
 
+  get '/gigs/available', to: 'gigs#available', as: 'available_gigs'
+
   resources :gigs
 
   resources :users

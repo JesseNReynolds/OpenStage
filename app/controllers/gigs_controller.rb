@@ -1,6 +1,10 @@
 class GigsController < ApplicationController
     before_action :set_gig, only: [:show, :destroy]
 
+    def available
+        @gigs = Gig.all_available
+    end
+    
     def index
         @gigs = Gig.all
     end
