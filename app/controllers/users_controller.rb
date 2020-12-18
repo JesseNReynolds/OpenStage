@@ -20,6 +20,7 @@ class UsersController < ApplicationController
     if params[:id] == current_user_id
     else
       redirect_to users, notice: "You can only edit your own profile."
+    end
   end
 
   # POST /users
@@ -64,4 +65,5 @@ class UsersController < ApplicationController
     def user_params
       params.require(:user).permit(:name, :email, :password, :password_confirmation, :bio)
     end
+
 end

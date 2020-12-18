@@ -2,5 +2,21 @@
 
 <h1><%= @band.name %></h1>
 
+<div>
+    <div>
+        <%= @band.leader.name %>
+    </div>
+    <% @band.band_members.each do |band_member| %>
+        <div>
+            <%= band_member.user.name %>
+        </div>
+    <% end %>
+    <div>
+        <% if current_user_leads_this_band? %>
+            <h1>THIS SHOULD BE A FORM TO ADD A MEMBER</h1>
+        <% end %>
+    </div>
+</div>
+
 <%= link_to 'Edit', edit_band_path(@band) %> |
 <%= link_to 'Back', bands_path %>
