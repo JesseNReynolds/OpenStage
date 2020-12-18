@@ -40,7 +40,7 @@ class GigsController < ApplicationController
     end
 
     def gig_params
-        params.require(:gig).permit(:time, :duration)
+        params.require(:gig).permit(:time, :duration, :venue_message)
     end
 
 end
