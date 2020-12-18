@@ -14,11 +14,15 @@ class ApplicationController < ActionController::Base
     end
 
     def current_venue_id
-        session[:venue_id]
+        if venue_is_logged_in?
+            session[:venue_id]
+        end
     end
 
     def current_venue
-        Venue.find(session[:venue_id])
+        if venue_is_logged_in?
+            Venue.find(session[:venue_id])
+        end
     end
 
     def user_is_logged_in?
