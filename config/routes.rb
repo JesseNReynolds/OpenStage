@@ -15,9 +15,10 @@ Rails.application.routes.draw do
 
   
   resources :bands do
+    resources :band_members, only: [:index]
     resources :gigs, only: [:index]
   end
-  
+
   resources :gigs
 
   resources :users
