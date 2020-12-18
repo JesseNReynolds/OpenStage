@@ -49,7 +49,7 @@ class BandsController < ApplicationController
   def destroy
     @band.destroy
     redirect_to bands_url, notice: 'Band was successfully destroyed.'
-end
+  end
 
   private
     # Use callbacks to share common setup or constraints between actions.
