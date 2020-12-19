@@ -19,7 +19,7 @@ class UsersController < ApplicationController
   def edit
     if params[:id] == current_user_id
     else
-      redirect_to users, notice: "You can only edit your own profile."
+      redirect_to users_url, notice: "You can only edit your own profile."
     end
   end
 

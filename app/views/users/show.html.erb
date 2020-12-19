@@ -3,6 +3,15 @@
 <h1><%= @user.name %></h1>
 
 <p><%= @user.bio %></p>
+
+<% if current_user_is_band_leader? %>
+    <%= form_with(url: 'bands/band_members/new', method: 'post') do |form| %>
+        <%= form.hidden_field :user_id, value: @user.id %>
+        <%= form.label "Invite to:" %>
+        <%= form.collection_select(:band_id, current_user.lead_bands, :id, :name) %>
+        <%= form.submit "Invite" %>
+    <% end %>
+<% end %>
 <%= link_to "Bio", bio_path %>
 <br>
 <%= link_to 'Back', users_path %>

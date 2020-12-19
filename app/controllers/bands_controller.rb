@@ -1,6 +1,12 @@
 class BandsController < ApplicationController
   before_action :set_band, only: [:show, :edit, :update, :destroy]
 
+  def add_member
+    user = User.find(params[:user_id])
+    BandMember.create(user_id: params[:user_id], band_id: params[:band_id], status: "pending")
+    redirect_to user, notice: "Invite sent"
+  end
+
   # GET /bands
   def index
     @bands = Band.all

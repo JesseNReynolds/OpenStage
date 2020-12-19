@@ -2,6 +2,8 @@ Rails.application.routes.draw do
 
   root 'application#home'
 
+  post 'users/bands/band_members/new', to: 'bands#add_member', as: 'add_member'
+
   resources :sessions, only: [:create]
   get '/login', to: 'sessions#login', as: 'login'
   get '/venues/login', to: 'sessions#venue_login', as: 'venue_login'
@@ -13,7 +15,6 @@ Rails.application.routes.draw do
   end
   get '/venues/:id/description', to: 'venue#description', as: 'description'
 
-  
   resources :bands do
     resources :gigs, only: [:index]
   end
