@@ -17,7 +17,7 @@
                 Host on Heroku
                 
 # What's next:
-- [] Users
+- [x] Users
 -   [x] can sign up
 -   [x] can sign in... and out
 -   [x] can create bands
@@ -43,7 +43,7 @@
 -   [x] can be created
 -   [ ] field for date AND time
         look into https://github.com/shekibobo/time_splitter
--   [ ] can be claimed
+-   [x] can be claimed
 -   [ ] can be approved
 -   [ ] can be denied
 -   [ ] if denied, they replace themselves with a new available instance
@@ -55,6 +55,8 @@
 # Style
 - [ ] Choose colors
         https://coolors.co/122c34-cc3f0c-3c1518-60afff-7e8987
+        or
+        https://coolors.co/122c34-f0f0c9-3c1518-857e7b-7e8987
 - [ ] Layout template
 - [ ] First pass styling each page
 
