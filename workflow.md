@@ -1,13 +1,11 @@
 # Hopeful schedule
 
         Monday:
-                add band members if leader
-                nested routes for gigs
-                oauth
-
-        Tuesday:
                 Bands claim gigs
                 Venues approve or deny claimed gigs, gigs auto replace when denied or have deny and replace listing option
+
+        Tuesday:
+                oauth
                 
         Wednesday:
                 Cleanup

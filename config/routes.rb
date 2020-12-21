@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
   root 'application#home'
 
-  post 'users/bands/band_members/new', to: 'bands#add_member', as: 'add_member'
+  post 'users/bands/band_members/new', to: 'bands#invite_member', as: 'invite_member'
 
   resources :sessions, only: [:create]
   get '/login', to: 'sessions#login', as: 'login'
@@ -10,12 +10,13 @@ Rails.application.routes.draw do
   post '/venues/session', to: 'sessions#venue_create', as: 'venue_session'
   get '/logout', to: 'sessions#destroy', as: 'logout'
 
+  get '/venue/:id/description', to: 'venue#description', as: 'description'
   resources :venues do
     resources :gigs, only: [:index]
   end
   get '/venues/:id/description', to: 'venue#description', as: 'description'
 
-  post 'bands/gigs/new', to: 'bands#add_gig', as: 'add_gig'
+  post 'bands/gigs/new', to: 'bands#claim_gig', as: 'claim_gig'
   resources :bands do
     resources :gigs, only: [:index]
   end

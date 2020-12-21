@@ -1,9 +1,11 @@
 class VenuesController < ApplicationController
-  before_action :set_venue, only: [:show, :edit, :update, :destroy]
+  before_action :set_venue, only: [:show, :edit, :update, :destroy, :description]
+
+  def description
+  end
 
   # GET /venues
   def index
-    byebug
     @venues = Venue.all
   end
 

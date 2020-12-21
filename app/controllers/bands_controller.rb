@@ -1,7 +1,7 @@
 class BandsController < ApplicationController
   before_action :set_band, only: [:show, :edit, :update, :destroy]
 
-  def add_member
+  def invite_member
     user = User.find(params[:user_id])
     if BandMember.create(user_id: params[:user_id], band_id: params[:band_id], status: "pending")
       redirect_to user, notice: "Invite sent."
@@ -10,10 +10,11 @@ class BandsController < ApplicationController
     end
   end
 
-  def add_gig
+  def claim_gig
     gig = Gig.find(params[:gig_id])
     band = Band.find(params[:band_id])
     gig.band_id = band.id
+    gig.status = "Pending"
       if gig.save
         redirect_to band, notice: "Gig requested."
       else

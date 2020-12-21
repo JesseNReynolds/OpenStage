@@ -1,5 +1,5 @@
 <% if @venue.id == Venue.current_venue_id(session) %>
     <%= render partial: 'description_form' %>
 <% else %>
-    <p><%= @venue.bio %></p>
+    <p><%= @venue.description %></p>
 <% end %>
