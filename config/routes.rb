@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   end
   get '/venues/:id/description', to: 'venue#description', as: 'description'
 
+  post 'bands/gigs/new', to: 'bands#add_gig', as: 'add_gig'
   resources :bands do
     resources :gigs, only: [:index]
   end

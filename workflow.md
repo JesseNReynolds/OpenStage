@@ -1,8 +1,5 @@
 # Hopeful schedule
-        Friday:
-                db seed
-                nested routes for band members
-     
+
         Monday:
                 add band members if leader
                 nested routes for gigs

@@ -3,8 +3,22 @@ class BandsController < ApplicationController
 
   def add_member
     user = User.find(params[:user_id])
-    BandMember.create(user_id: params[:user_id], band_id: params[:band_id], status: "pending")
-    redirect_to user, notice: "Invite sent"
+    if BandMember.create(user_id: params[:user_id], band_id: params[:band_id], status: "pending")
+      redirect_to user, notice: "Invite sent."
+    else
+      redirect_to user, notice: "Something went wrong, please try again later."
+    end
+  end
+
+  def add_gig
+    gig = Gig.find(params[:gig_id])
+    band = Band.find(params[:band_id])
+    gig.band_id = band.id
+      if gig.save
+        redirect_to band, notice: "Gig requested."
+      else
+        redirect_to gig, notice: "Something went wrong, please try again later."
+      end
   end
 
   # GET /bands
