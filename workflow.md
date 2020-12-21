@@ -26,8 +26,8 @@
 
 - [ ] Bands
 -   [x] can be created
--   [ ] can invite users to join
--   [ ] can request available gigs
+-   [x] can invite users to join
+-   [x] can request available gigs
         
 - [ ] BandMembers
 -   [ ] users can join
@@ -37,7 +37,7 @@
 -   [x] add columns city and state
 -   [x] can sign up
 -   [x] can sign in and out
--   [ ] can post gigs as available
+-   [x] can post gigs as available
 
 - [ ] Gigs
 -   [x] can be created
