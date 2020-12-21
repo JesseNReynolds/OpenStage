@@ -3,8 +3,8 @@
 <% @gigs.each do |gig| %>
     <div>
         <%= gig.venue.name %>
-        <%= gig.time %>
-        <%= link_to gig.venue.name, gig %>
+        <%= gig.venue_message%>
+        <%= link_to "More details", gig %>
     </div>
 <% end %>
 

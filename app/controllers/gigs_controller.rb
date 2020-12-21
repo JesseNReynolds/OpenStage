@@ -3,6 +3,7 @@ class GigsController < ApplicationController
 
     def available
         @gigs = Gig.all_available
+        render :index
     end
     
     def index
