@@ -1,6 +1,15 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy, :bio]
 
+  def invite_member
+    user = User.find(params[:user_id])
+    if BandMember.create(user_id: params[:user_id], band_id: params[:band_id], status: "pending")
+      redirect_to user, notice: "Invite sent."
+    else
+      redirect_to user, notice: "Something went wrong, please try again later."
+    end
+  end
+
   # GET /users
   def index
     @users = User.all

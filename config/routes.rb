@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
   root 'application#home'
 
-  post 'users/bands/band_members/new', to: 'bands#invite_member', as: 'invite_member'
+  post 'users/bands/band_members/new', to: 'users#invite_member', as: 'invite_member'
 
   resources :sessions, only: [:create]
   get '/login', to: 'sessions#login', as: 'login'

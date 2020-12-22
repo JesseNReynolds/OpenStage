@@ -1,27 +1,6 @@
 class BandsController < ApplicationController
   before_action :set_band, only: [:show, :edit, :update, :destroy]
 
-  def invite_member
-    user = User.find(params[:user_id])
-    if BandMember.create(user_id: params[:user_id], band_id: params[:band_id], status: "pending")
-      redirect_to user, notice: "Invite sent."
-    else
-      redirect_to user, notice: "Something went wrong, please try again later."
-    end
-  end
-
-  def claim_gig
-    gig = Gig.find(params[:gig_id])
-    band = Band.find(params[:band_id])
-    gig.band_id = band.id
-    gig.approval = "Pending"
-      if gig.save
-        redirect_to gig, notice: "Gig requested."
-      else
-        redirect_to gig, notice: "Something went wrong, please try again later."
-      end
-  end
-
   # GET /bands
   def index
     @bands = Band.all
