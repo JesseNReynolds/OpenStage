@@ -10,10 +10,22 @@ class GigsController < ApplicationController
         @gigs = Gig.all
     end
 
+    def claim_gig
+        gig = Gig.find(params[:gig_id])
+        band = Band.find(params[:band_id])
+        gig.band_id = band.id
+        gig.approval = "Pending"
+        if gig.save
+            redirect_to gig, notice: "Gig requested."
+        else
+            redirect_to gig, notice: "Something went wrong, please try again later."
+        end
+    end
+
     def accept
         @gig.approval = "Approved"
         if @gig.save
-            redirect_to @gig, notice: "Gig approved"
+            redirect_to gigs, notice: "Gig approved"
         else
             redirect_to @gig, notice: "Something went wrong. Please try again later."
         end

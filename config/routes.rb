@@ -15,7 +15,7 @@ Rails.application.routes.draw do
     resources :gigs, only: [:index]
   end
 
-  post 'bands/gigs/new', to: 'bands#claim_gig', as: 'claim_gig'
+  post 'bands/gigs/new', to: 'gigs#claim_gig', as: 'claim_gig'
   resources :bands do
     resources :gigs, only: [:index]
   end
