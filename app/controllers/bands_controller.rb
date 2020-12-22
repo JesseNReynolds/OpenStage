@@ -14,9 +14,9 @@ class BandsController < ApplicationController
     gig = Gig.find(params[:gig_id])
     band = Band.find(params[:band_id])
     gig.band_id = band.id
-    gig.status = "Pending"
+    gig.approval = "Pending"
       if gig.save
-        redirect_to band, notice: "Gig requested."
+        redirect_to gig, notice: "Gig requested."
       else
         redirect_to gig, notice: "Something went wrong, please try again later."
       end

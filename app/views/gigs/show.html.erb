@@ -2,7 +2,7 @@
 <p id="notice"><%= notice %></p>
 
 <% if current_user_is_band_leader? %>
-    <%= form_with(url: 'bands/gigs/new', method: 'post') do |form| %>
+    <%= form_with(url: '/bands/gigs/new', method: 'post') do |form| %>
         <%= form.hidden_field :gig_id, value: @gig.id %>
         <%= form.label "Request as:" %>
         <%= form.collection_select(:band_id, current_user.lead_bands, :id, :name) %>

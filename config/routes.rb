@@ -10,19 +10,19 @@ Rails.application.routes.draw do
   post '/venues/session', to: 'sessions#venue_create', as: 'venue_session'
   get '/logout', to: 'sessions#destroy', as: 'logout'
 
-  get '/venue/:id/description', to: 'venue#description', as: 'description'
+  get '/venue/:id/description', to: 'venues#description', as: 'description'
   resources :venues do
     resources :gigs, only: [:index]
   end
-  get '/venues/:id/description', to: 'venue#description', as: 'description'
 
   post 'bands/gigs/new', to: 'bands#claim_gig', as: 'claim_gig'
   resources :bands do
     resources :gigs, only: [:index]
   end
 
+  post '/gigs/accept', to: 'gigs#accept', as: 'accept_gig'
+  post '/gigs/deny', to: 'gigs#deny', as: 'deny_gig'
   get '/gigs/available', to: 'gigs#available', as: 'available_gigs'
-
   resources :gigs
 
   resources :users

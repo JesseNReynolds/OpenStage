@@ -4,6 +4,13 @@
     <div>
         <%= gig.venue.name %>
         <%= gig.venue_message%>
+        <% if gig.band_id != nil%>
+            <%= gig.band.name %>
+        <% end %>
+        <% if gig.venue_id == current_venue_id && gig.band_id != nil %>
+            <%= button_to "Accept", accept_gig_path, params: {id: gig.id} %>
+            <%= button_to "Deny", deny_gig_path, {id: gig.id} %>
+        <% end %>
         <%= link_to "More details", gig %>
     </div>
 <% end %>

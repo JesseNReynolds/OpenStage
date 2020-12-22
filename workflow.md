@@ -1,10 +1,8 @@
 # Hopeful schedule
 
-        Monday:
-                Bands claim gigs
+        Tuesday:
                 Venues approve or deny claimed gigs, gigs auto replace when denied or have deny and replace listing option
 
-        Tuesday:
                 oauth
                 
         Wednesday:
@@ -24,7 +22,7 @@
 -   [x] can update bios from their own profile page
 -   [x] can only edit their own information
 
-- [ ] Bands
+- [x] Bands
 -   [x] can be created
 -   [x] can invite users to join
 -   [x] can request available gigs
@@ -33,7 +31,7 @@
 -   [ ] users can join
 -   [ ] displays all users involved
 
-- [ ] Venues
+- [x] Venues
 -   [x] add columns city and state
 -   [x] can sign up
 -   [x] can sign in and out
