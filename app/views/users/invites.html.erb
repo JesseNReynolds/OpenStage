@@ -3,5 +3,9 @@
 <% user_invites.each do |invite|%>
     <div>
         <%= invite.band.name %>
+        <% if invite.user_id == current_user_id %>
+            <%= button_to "Accept", accept_invite_path, params: {id: invite.id} %>
+            <%= button_to "Decline", decline_gig_path, {id: invite.id} %>
+        <% end %>
     </div>
 <%end %>

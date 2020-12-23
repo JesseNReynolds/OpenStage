@@ -19,10 +19,12 @@ Rails.application.routes.draw do
   end
 
   post '/gigs/accept', to: 'gigs#accept', as: 'accept_gig'
-  post '/gigs/deny', to: 'gigs#deny', as: 'deny_gig'
+  post '/gigs/decline', to: 'gigs#decine', as: 'decline_gig'
   get '/gigs/available', to: 'gigs#available', as: 'available_gigs'
   resources :gigs
 
+  post '/users/invites/accept', to: 'users#accept_invite', as: 'accept_invite'
+  post '/users/invites/decline', to: 'users#decline_invite', as: 'decline_invite'
   post '/users/bands/band_members/new', to: 'users#invite_member', as: 'invite_member'
   get '/users/invites', to: 'users#invites', as: 'user_invites'
   resources :users

@@ -13,6 +13,26 @@ class UsersController < ApplicationController
   def invites
   end
 
+  def accept_invite
+    invite = BandMember.find(params[:id])
+    invite.status = "Accepted"
+    if invite.save
+      redirect_to invite.band, notice: "You've joined #{invite.band.name}."
+    else
+      redirect_to invites_path, notice: "An error occured, please try again later."
+    end
+  end
+
+  def decline_invite
+    invite = BandMember.find(params[:id])
+    invite.status = "Declined"
+    if invite.save
+      redirect_to invites_path, notice: "You've declined the invite from #{invite.band.name}."
+    else
+      redirect_to invites_path, notice: "An error occured, please try again later."
+    end
+  end
+
   # GET /users
   def index
     @users = User.all

@@ -1,7 +1,4 @@
 # Hopeful schedule
-
-        Tuesday:
-                oauth
                 
         Wednesday:
                 Cleanup
@@ -9,7 +6,8 @@
         Thursday:
                 Style
 
-        Friday:
+        Monday:
+                oauth
                 Host on Heroku
                 
 # What's next:
@@ -26,8 +24,9 @@
 -   [x] can request available gigs
         
 - [ ] BandMembers
--   [ ] users can join
+-   [x] users can join
 -   [x] displays all users involved
+-   [ ] can leave bands they're in
 
 - [x] Venues
 -   [x] add columns city and state
