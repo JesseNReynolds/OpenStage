@@ -2,8 +2,6 @@ Rails.application.routes.draw do
 
   root 'application#home'
 
-  post 'users/bands/band_members/new', to: 'users#invite_member', as: 'invite_member'
-
   resources :sessions, only: [:create]
   get '/login', to: 'sessions#login', as: 'login'
   get '/venues/login', to: 'sessions#venue_login', as: 'venue_login'
@@ -15,7 +13,7 @@ Rails.application.routes.draw do
     resources :gigs, only: [:index]
   end
 
-  post 'bands/gigs/new', to: 'gigs#claim_gig', as: 'claim_gig'
+  post '/bands/gigs/new', to: 'gigs#claim_gig', as: 'claim_gig'
   resources :bands do
     resources :gigs, only: [:index]
   end
@@ -25,9 +23,11 @@ Rails.application.routes.draw do
   get '/gigs/available', to: 'gigs#available', as: 'available_gigs'
   resources :gigs
 
+  post '/users/bands/band_members/new', to: 'users#invite_member', as: 'invite_member'
+  get '/users/invites', to: 'users#invites', as: 'user_invites'
   resources :users
   get '/users/:id/bio', to: 'users#bio', as: 'bio'
-
+  
 
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html

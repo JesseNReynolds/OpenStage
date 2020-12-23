@@ -1,13 +1,17 @@
 class ApplicationController < ActionController::Base
     helper_method :venue_is_logged_in?, :current_venue, :current_venue_id,
      :user_is_logged_in?, :current_user_id, :current_user, :current_user_is_band_leader?,
-     :current_user_leads_this_band?
+     :current_user_leads_this_band?, :user_invites
 
     def home
         render '/home'
     end
 
     private
+
+    def user_invites
+        BandMember.where({user_id: current_user_id, status: "pending"})
+    end
 
     def venue_is_logged_in?
         !!session[:venue_id]

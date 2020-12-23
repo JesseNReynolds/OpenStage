@@ -1,8 +1,6 @@
 # Hopeful schedule
 
         Tuesday:
-                Venues approve or deny claimed gigs, gigs auto replace when denied or have deny and replace listing option
-
                 oauth
                 
         Wednesday:
@@ -29,7 +27,7 @@
         
 - [ ] BandMembers
 -   [ ] users can join
--   [ ] displays all users involved
+-   [x] displays all users involved
 
 - [x] Venues
 -   [x] add columns city and state
@@ -42,9 +40,9 @@
 -   [ ] field for date AND time
         look into https://github.com/shekibobo/time_splitter
 -   [x] can be claimed
--   [ ] can be approved
--   [ ] can be denied
--   [ ] if denied, they replace themselves with a new available instance
+-   [x] can be approved
+-   [x] can be denied
+-   [x] if denied, they become available with no associated band
 
 # Cleanup
 - [ ] Visit each route and make sure it's present and relevant. Delete, add, or refactor as needed.

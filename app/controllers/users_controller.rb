@@ -10,6 +10,9 @@ class UsersController < ApplicationController
     end
   end
 
+  def invites
+  end
+
   # GET /users
   def index
     @users = User.all
