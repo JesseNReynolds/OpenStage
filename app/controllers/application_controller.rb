@@ -61,4 +61,15 @@ class ApplicationController < ActionController::Base
         band = Band.find(band_id)
         band.users.include?(current_user)
     end
+
+    def venue_with_most_gigs
+        venues = Venue.all
+        most_gigginest_venue = Venue.find(1)
+        venues.each do |venue|
+            if venue.gigs.count > most_gigginest_venue.gigs.count
+                most_gigginest_venue = venue
+            end
+        end
+        return most_gigginest_venue
+    end
 end

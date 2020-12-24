@@ -2,6 +2,8 @@ Rails.application.routes.draw do
 
   root 'application#home'
 
+  get '/venue-with-most-gigs', to: 'venues#most_gigs', as: 'most_gigginest_venue'
+
   resources :sessions, only: [:create]
   get '/login', to: 'sessions#login', as: 'login'
   get '/venues/login', to: 'sessions#venue_login', as: 'venue_login'

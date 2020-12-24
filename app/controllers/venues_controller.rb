@@ -1,6 +1,11 @@
 class VenuesController < ApplicationController
   before_action :set_venue, only: [:show, :edit, :update, :destroy, :description]
 
+  def most_gigs
+    @venue = venue_with_most_gigs
+    render "show"
+  end
+
   def description
   end
 
