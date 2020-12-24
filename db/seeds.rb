@@ -62,6 +62,8 @@ venues = Venue.create(
 
 band_members = BandMember.create(
     [
+        {band_id: Band.find_by(name: "The Deep Space Nine Players").id, user_id: User.find_by(name: "Ben Sisko").id, status: "Accepted"},
+        
         {band_id: Band.find_by(name: "The Deep Space Nine Players").id, user_id: User.find_by(name: "Kira Nerys").id, status: "Accepted"},
 
         {band_id: Band.find_by(name: "The Deep Space Nine Players").id, user_id: User.find_by(name: "Odo").id, status: "Accepted"},
@@ -73,6 +75,8 @@ band_members = BandMember.create(
         {band_id: Band.find_by(name: "The Deep Space Nine Players").id, user_id: User.find_by(name: "Worf Rozchenko").id, status: "Accepted"},
 
         {band_id: Band.find_by(name: "The Deep Space Nine Players").id, user_id: User.find_by(name: "Miles O'Brien").id, status: "Accepted"},
+
+        {band_id: Band.find_by(name: "The Bajoran Militants").id, user_id: User.find_by(name: "Kira Nerys").id, status: "Accepted"},
 
         {band_id: Band.find_by(name: "The Bajoran Militants").id, user_id: User.find_by(name: "Odo").id, status: "Accepted"},
 
@@ -86,9 +90,13 @@ band_members = BandMember.create(
 
         {band_id: Band.find_by(name: "The Bajoran Militants").id, user_id: User.find_by(name: "Damar").id, status: "Accepted"},        
 
+        {band_id: Band.find_by(name: "The Dahar Masters").id, user_id: User.find_by(name: "Gowron").id, status: "Accepted"},
+
         {band_id: Band.find_by(name: "The Dahar Masters").id, user_id: User.find_by(name: "Worf Rozchenko").id, status: "Accepted"},
 
         {band_id: Band.find_by(name: "The Dahar Masters").id, user_id: User.find_by(name: "Martok").id, status: "Accepted"},
+
+        {band_id: Band.find_by(name: "Remember The Alamo").id, user_id: User.find_by(name: "Julian Bashir").id, status: "Accepted"},
 
         {band_id: Band.find_by(name: "Remember The Alamo").id, user_id: User.find_by(name: "Miles O'Brien").id, status: "Accepted"},
 

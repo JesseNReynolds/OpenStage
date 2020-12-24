@@ -3,9 +3,6 @@
 <h1><%= @band.name %></h1>
 
 <div>
-    <div>
-        <%= @band.leader.name %>
-    </div>
     <% @band.band_members.each do |band_member| %>
         <div>
             <%= band_member.user.name %>

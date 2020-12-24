@@ -30,9 +30,9 @@ class BandsController < ApplicationController
   # POST /bands
   def create
     @band = Band.new(band_params)
-    @band.leader_id = User.current_user_id(session)
-
+    @band.leader_id = current_user_id
     if @band.save
+      BandMember.create(band_id: @band.id, user_id: current_user_id, status: "Accepted")
       redirect_to @band, notice: 'Band was successfully created.' 
     else
       render :new 
