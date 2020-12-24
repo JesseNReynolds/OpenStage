@@ -52,7 +52,7 @@ class ApplicationController < ActionController::Base
     end
     
     def current_user_leads_this_band?
-        if current_user_is_a_leader?
+        if current_user_is_band_leader?
             current_user.lead_bands.include?(Band.find(params[:id]))
         end
     end

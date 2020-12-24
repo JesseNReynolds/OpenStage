@@ -26,6 +26,7 @@ Rails.application.routes.draw do
   post '/users/invites/accept', to: 'users#accept_invite', as: 'accept_invite'
   post '/users/bands/band_members/new', to: 'users#invite_member', as: 'invite_member'
   get '/users/invites', to: 'users#invites', as: 'user_invites'
+  delete '/band_members/:id/remove', to: 'users#remove_from_band', as: 'remove_from_band'
   resources :users do 
     resources :bands, only: [:index]
   end

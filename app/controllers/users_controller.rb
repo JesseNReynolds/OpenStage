@@ -24,6 +24,18 @@ class UsersController < ApplicationController
     end
   end
 
+  def remove_from_band
+    user = User.find(params[:user_id])
+    band_member = BandMember.find(params[:band_member_id])
+    band = Band.find(params[:band_id])
+    if band.leader == current_user
+      band_member.delete
+      redirect_to band, notice: "User removed from band."
+    else
+      redirect_to band, notice: "You can't kick people out of bands you don't manage."
+    end
+  end
+
   # GET /users
   def index
     @users = User.all
