@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
     helper_method :venue_is_logged_in?, :current_venue, :current_venue_id,
      :user_is_logged_in?, :current_user_id, :current_user, :current_user_is_band_leader?,
-     :current_user_leads_this_band?, :user_invites
+     :current_user_leads_this_band?, :user_invites, :current_user_is_member_of?
 
     def home
         render '/home'
@@ -55,5 +55,10 @@ class ApplicationController < ActionController::Base
         if current_user_is_band_leader?
             current_user.lead_bands.include?(Band.find(params[:id]))
         end
+    end
+
+    def current_user_is_member_of?(band_id)
+        band = Band.find(band_id)
+        band.users.include?(current_user)
     end
 end

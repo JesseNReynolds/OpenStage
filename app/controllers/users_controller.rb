@@ -36,6 +36,16 @@ class UsersController < ApplicationController
     end
   end
 
+  def leave_band
+    band = Band.find(params[:band_id])
+    band_member = BandMember.find_by(band_id: params[:band_id], user_id: current_user_id)
+    if band_member.delete
+      redirect_to band, notice: "You've left this band."
+    else
+      redirect_to band, notice: "Something went wrong."
+    end
+  end
+
   # GET /users
   def index
     @users = User.all
