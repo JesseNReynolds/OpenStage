@@ -24,7 +24,6 @@ Rails.application.routes.draw do
   resources :gigs
 
   post '/users/invites/accept', to: 'users#accept_invite', as: 'accept_invite'
-  post '/users/invites/decline', to: 'users#decline_invite', as: 'decline_invite'
   post '/users/bands/band_members/new', to: 'users#invite_member', as: 'invite_member'
   get '/users/invites', to: 'users#invites', as: 'user_invites'
   resources :users do 
