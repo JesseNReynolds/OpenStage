@@ -1,5 +1,5 @@
 class GigsController < ApplicationController
-    before_action :set_gig, only: [:show, :destroy, :accept, :deny]
+    before_action :set_gig, only: [:show, :destroy, :accept, :decline]
 
     def available
         @gigs = Gig.all_available
@@ -25,16 +25,17 @@ class GigsController < ApplicationController
     def accept
         @gig.approval = "Approved"
         if @gig.save
-            redirect_to gigs, notice: "Gig approved"
+            redirect_to gigs_path, notice: "Gig approved"
         else
             redirect_to @gig, notice: "Something went wrong. Please try again later."
         end
     end
 
-    def deny
+    def decline
         @gig.approval = nil
+        @gig.band_id = nil
         if @gig.save
-            redirect_to @gig, notice: "Gig denied. Gig status set to available. To remove the git posting, delete this gig."
+            redirect_to @gig, notice: "Gig denied. Gig status set to available. To remove the gig posting, delete this gig."
         else
             redirect_to @gig, notice: "Something went wrong. Please try again later."
         end

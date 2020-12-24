@@ -19,7 +19,7 @@ Rails.application.routes.draw do
   end
 
   post '/gigs/accept', to: 'gigs#accept', as: 'accept_gig'
-  post '/gigs/decline', to: 'gigs#decine', as: 'decline_gig'
+  post '/gigs/decline', to: 'gigs#decline', as: 'decline_gig'
   get '/gigs/available', to: 'gigs#available', as: 'available_gigs'
   resources :gigs
 
@@ -27,7 +27,9 @@ Rails.application.routes.draw do
   post '/users/invites/decline', to: 'users#decline_invite', as: 'decline_invite'
   post '/users/bands/band_members/new', to: 'users#invite_member', as: 'invite_member'
   get '/users/invites', to: 'users#invites', as: 'user_invites'
-  resources :users
+  resources :users do 
+    resources :bands, only: [:index]
+  end
   get '/users/:id/bio', to: 'users#bio', as: 'bio'
   
 
