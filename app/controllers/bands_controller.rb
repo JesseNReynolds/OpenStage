@@ -3,7 +3,11 @@ class BandsController < ApplicationController
 
   # GET /bands
   def index
-    @bands = Band.all
+    if params[:user_id]
+      @bands = User.find(params[:user_id]).bands
+    else
+      @bands = Band.all
+    end
   end
 
   # GET /bands/1

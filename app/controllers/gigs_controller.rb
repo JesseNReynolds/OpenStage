@@ -7,7 +7,13 @@ class GigsController < ApplicationController
     end
     
     def index
-        @gigs = Gig.all
+        if params[:venue_id]
+            @gigs = Venue.find(params[:venue_id]).gigs
+        elsif params[:band_id]
+            @gigs = Band.find(params[:band_id]).gigs
+        else
+            @gigs = Gig.all
+        end
     end
 
     def claim_gig
