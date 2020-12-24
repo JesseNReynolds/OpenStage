@@ -1,9 +1,7 @@
 # Hopeful schedule
-                
-        Wednesday:
-                Cleanup
 
         Thursday:
+                Cleanup
                 Style
 
         Monday:
