@@ -15,17 +15,19 @@ class VenuesController < ApplicationController
 
   # GET /venues/new
   def new
-    @venue = Venue.new
+    if venue_is_logged_in
+      redirect_to venues_path, notice: "You cannot create a new venue account, you're already logged in as a venue."
+    else
+      @venue = Venue.new
+    end
   end
 
   # GET /venues/1/edit
   def edit
-
     if @venue.id == current_venue.id
     else
       redirect_to venues_path notice: "You must be logged in to edit your info page."
     end
-    
   end
 
   # POST /venues
@@ -54,8 +56,13 @@ class VenuesController < ApplicationController
 
   # DELETE /venues/1
   def destroy
-    @venue.destroy
-    redirect_to venues_url, notice: 'Venue was successfully destroyed.'
+    if params[:venue_id] == current_venue_id
+      @venue.destroy
+      session[:venue_id] = nil
+      redirect_to venues_url, notice: "You've deleted your account."
+    else
+      redirect_to @venue, notice: "You can only delete your own account."
+    end
   end
 
   private
