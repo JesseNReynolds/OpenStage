@@ -16,10 +16,11 @@
 -   [x] can update bios from their own profile page
 -   [x] can only edit their own information
 
-- [x] Bands
+- [ ] Bands
 -   [x] can be created
 -   [x] can invite users to join
 -   [x] can request available gigs
+-   [ ] Band leaders can kick bandmembers
         
 - [ ] BandMembers
 -   [x] users can join
