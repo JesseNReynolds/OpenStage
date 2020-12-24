@@ -3,10 +3,11 @@ class UsersController < ApplicationController
 
   def invite_member
     user = User.find(params[:user_id])
-    if BandMember.create(user_id: params[:user_id], band_id: params[:band_id], status: "pending")
+    invite = BandMember.new(user_id: params[:user_id], band_id: params[:band_id], status: "pending")
+    if invite.save
       redirect_to user, notice: "Invite sent."
     else
-      redirect_to user, notice: "Something went wrong, please try again later."
+      redirect_to user, notice: "Either something went wrong, or this user is already in that band. Please try again later."
     end
   end
 

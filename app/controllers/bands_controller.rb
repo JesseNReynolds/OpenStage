@@ -16,7 +16,7 @@ class BandsController < ApplicationController
 
   # GET /bands/new
   def new
-    if User.is_logged_in?(session)
+    if user_is_logged_in?
       @band = Band.new
     else
       redirect_to bands_path, notice: "You must be logged in as a user to create a band."
