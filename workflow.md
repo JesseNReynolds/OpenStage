@@ -1,10 +1,10 @@
 # Hopeful schedule
 
-        Thursday:
+        Monday:
                 Cleanup
                 Style
 
-        Monday:
+        Tuesday:
                 oauth
                 Host on Heroku
                 
@@ -22,10 +22,10 @@
 -   [x] can request available gigs
 -   [x] Band leaders can kick bandmembers
         
-- [ ] BandMembers
+- [x] BandMembers
 -   [x] users can join
 -   [x] displays all users involved
--   [ ] can leave bands they're in
+-   [x] can leave bands they're in
 
 - [x] Venues
 -   [x] add columns city and state
@@ -33,10 +33,9 @@
 -   [x] can sign in and out
 -   [x] can post gigs as available
 
-- [ ] Gigs
+- [x] Gigs
 -   [x] can be created
--   [ ] field for date AND time
-        look into https://github.com/shekibobo/time_splitter
+-   [x] field for date AND time
 -   [x] can be claimed
 -   [x] can be approved
 -   [x] can be denied

@@ -14,7 +14,7 @@
   <% end %>
 
   <%= form.label "Time" %>
-  <%= form.date_field :time %>
+  <%= form.datetime_field :time, min: Date.tomorrow %>
   <br>
   <%= form.label "Duration in minutes" %>
   <%= form.text_field :duration %>
