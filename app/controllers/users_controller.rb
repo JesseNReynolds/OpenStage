@@ -34,7 +34,11 @@ class UsersController < ApplicationController
 
   # GET /users/new
   def new
-    @user = User.new
+    if user_is_logged_in
+      redirect_to users_path, notice: "You can't create an account because you're already logged in to your account."
+    else
+      @user = User.new
+    end
   end
 
   # GET /users/1/edit
@@ -73,8 +77,13 @@ class UsersController < ApplicationController
 
   # DELETE /users/1
   def destroy
-    @user.destroy
-    redirect_to users_url, notice: 'User was successfully destroyed.'
+    if params[:id] == current_user_id
+      session[:user_id] = nil
+      @user.destroy
+      redirect_to users_url, notice: 'You deleted your account.'
+    else
+      redirect_to users_url, notice: 'You can only delete your own account.'
+    end
   end
 
   private
