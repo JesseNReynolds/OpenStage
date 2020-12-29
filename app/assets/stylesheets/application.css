@@ -112,7 +112,7 @@ label{
 
 .button {
 	box-shadow:inset 0px 1px 0px 0px #f2551c;
-	background:linear-gradient(to bottom, ##CC3F0C 5%, #CC3F0C 100%);
+	background:linear-gradient(to bottom, #CC3F0C 5%, #CC3F0C 100%);
 	background-color:#CC3F0C;
 	border-radius:3px;
 	border:1px solid #942911;
