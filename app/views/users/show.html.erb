@@ -4,7 +4,7 @@
 
 <p><%= @user.bio %></p>
 
-<% if current_user_is_band_leader? %>
+<% if current_user_is_band_leader? && current_user.id != @user.id %>
     <%= form_with(url: 'bands/band_members/new', method: 'post') do |form| %>
         <%= form.hidden_field :user_id, value: @user.id %>
         <%= form.label "Invite to:" %>
