@@ -13,3 +13,33 @@
  *= require_tree .
  *= require_self
  */
+
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap');
+
+body{
+    margin: 0px
+}
+.nav-wrapper{
+    display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    background-color: #122c34;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.logout{
+    justify-self: flex-end;
+}
+
+.nav-link{
+    font-size: larger;
+    text-decoration: none;
+    color: #CC3F0C;
+    margin: 15px;
+    font-family: 'Oswald', sans-serif;
+}
