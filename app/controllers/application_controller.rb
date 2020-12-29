@@ -2,7 +2,6 @@ class ApplicationController < ActionController::Base
     helper_method :venue_is_logged_in?, :current_venue, :current_venue_id,
      :user_is_logged_in?, :current_user_id, :current_user, :current_user_is_band_leader?,
      :current_user_leads_this_band?, :user_invites, :current_user_is_member_of?
-
     def home
         render '/home'
     end
