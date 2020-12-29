@@ -4,13 +4,15 @@
 
 <div>
     <% @band.band_members.each do |band_member| %>
-        <div>
-            <%= band_member.user.name %>
-            <% if current_user_leads_this_band? && @band.leader.id != band_member.user_id %>
-                <%= button_to "Remove from band", remove_from_band_path, method: 'delete',
-                 params: {user_id: band_member.user_id, band_member_id: band_member.id, band_id: @band.id} %>
-            <% end %>
-        </div>
+        <% if band_member.status == "Accepted" %>
+            <div>
+                <%= band_member.user.name %>
+                <% if current_user_leads_this_band? && @band.leader.id != band_member.user_id %>
+                    <%= button_to "Remove from band", remove_from_band_path, method: 'delete',
+                    params: {user_id: band_member.user_id, band_member_id: band_member.id, band_id: @band.id} %>
+                <% end %>
+            </div>
+        <% end %>
     <% end %>
 </div>
 

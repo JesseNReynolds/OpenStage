@@ -8,9 +8,50 @@
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
   </head>
 
   <body>
+    <nav class='navbar navbar-expand-lg navbar-dark bg-dark'>
+      <div class='container-fluid'>
+        <ul class='navbar-nav' id='nav-bar-menu'>
+          <% if user_is_logged_in? %>
+            <li class='nav-item'>
+              <%= link_to "Profile", current_user, class: 'text-light nav-link'%>
+            </li>
+            <li class='nav-item'>
+              <%= link_to "Your Bands", user_bands_path(current_user), class: 'text-light nav-link'%>
+            </li>
+            <li class='nav-item'>
+              <%= link_to "Your Gigs", user_gigs_path(current_user), class: 'text-light nav-link' %>
+            </li>
+            <% if current_user_is_band_leader? %>
+              <li class='nav-item'>
+                <%= link_to "Find a gig", available_gigs_path, class: 'text-light nav-link'%>
+              </li>
+            <% end %> 
+
+          <% elsif venue_is_logged_in? %>
+
+          <% else %>
+            <li class='nav-item'>
+              <%= link_to "Musician Log In", login_path, class: 'text-light nav-link'%>
+            </li>
+            <li class='nav-item'>
+              <%= link_to "Venue Log In", venue_login_path, class: 'text-light nav-link'%>
+            </li>
+          <% end %>
+          <li class='nav-tem'>
+            <%= link_to "Musicians", users_path, class: 'text-light nav-link' %>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
     <%= yield %>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
   </body>
 </html>

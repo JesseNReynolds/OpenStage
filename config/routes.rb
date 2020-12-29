@@ -30,7 +30,8 @@ Rails.application.routes.draw do
   get '/users/invites', to: 'users#invites', as: 'user_invites'
   delete '/band_members/remove', to: 'users#remove_from_band', as: 'remove_from_band'
   delete '/band_members/leave', to: 'users#leave_band', as: 'leave_band'
-  resources :users do 
+  resources :users do
+    resources :gigs, only: [:index] 
     resources :bands, only: [:index]
   end
   get '/users/:id/bio', to: 'users#bio', as: 'bio'

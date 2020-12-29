@@ -11,6 +11,8 @@ class GigsController < ApplicationController
             @gigs = Venue.find(params[:venue_id]).gigs
         elsif params[:band_id]
             @gigs = Band.find(params[:band_id]).gigs
+        elsif params[:user_id]
+            @gigs = User.find(params[:user_id]).gigs
         else
             @gigs = Gig.all
         end
