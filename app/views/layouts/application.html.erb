@@ -14,56 +14,60 @@
   </head>
 
   <body>
-    <nav class='navbar navbar-expand-lg navbar-dark bg-dark'>
+    <nav class='navbar navbar-expand-md navbar-dark bg-dark'>
       <div class='container-fluid'>
-        <ul class='navbar-nav'>
-          <% if user_is_logged_in? %>
-            <li class='nav-item'>
-              <%= link_to current_user.name, current_user, class: 'text-light nav-link'%>
-            </li>
-            <li class='nav-item'>
-              <%= link_to "Your Bands", user_bands_path(current_user), class: 'text-light nav-link'%>
-            </li>
-            <li class='nav-item'>
-              <%= link_to "Your Gigs", user_gigs_path(current_user), class: 'text-light nav-link' %>
-            </li>
-            <% if current_user_is_band_leader? %>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class='navbar-nav'>
+            <% if user_is_logged_in? %>
               <li class='nav-item'>
-                <%= link_to "Find a gig", available_gigs_path, class: 'text-light nav-link'%>
+                <%= link_to current_user.name, current_user, class: 'text-light nav-link'%>
               </li>
-            <% end %> 
+              <li class='nav-item'>
+                <%= link_to "Your Bands", user_bands_path(current_user), class: 'text-light nav-link'%>
+              </li>
+              <li class='nav-item'>
+                <%= link_to "Your Gigs", user_gigs_path(current_user), class: 'text-light nav-link' %>
+              </li>
+              <% if current_user_is_band_leader? %>
+                <li class='nav-item'>
+                  <%= link_to "Find a gig", available_gigs_path, class: 'text-light nav-link'%>
+                </li>
+              <% end %> 
 
-          <% elsif venue_is_logged_in? %>
-            <li class='nav-item'>
-              <%= link_to current_venue.name, current_venue, class: 'text-light nav-link'%>
-            </li>
-            <li class='nav-item'>
-              <%= link_to "My gigs", venue_gigs_path(current_venue), class: 'text-light nav-link'%>
-            </li>
-            <li class='nav-item'>
-              <%= link_to "Offer New Gig", new_gig_path, class: 'text-light nav-link'%>
-            </li>
+            <% elsif venue_is_logged_in? %>
+              <li class='nav-item'>
+                <%= link_to current_venue.name, current_venue, class: 'text-light nav-link'%>
+              </li>
+              <li class='nav-item'>
+                <%= link_to "My gigs", venue_gigs_path(current_venue), class: 'text-light nav-link'%>
+              </li>
+              <li class='nav-item'>
+                <%= link_to "Offer New Gig", new_gig_path, class: 'text-light nav-link'%>
+              </li>
 
-          <% else %>
+            <% else %>
+              <li class='nav-item'>
+                <%= link_to "Musician Log In", login_path, class: 'text-light nav-link'%>
+              </li>
+              <li class='nav-item'>
+                <%= link_to "Venue Log In", venue_login_path, class: 'text-light nav-link'%>
+              </li>
+            <% end %>
+
             <li class='nav-item'>
-              <%= link_to "Musician Log In", login_path, class: 'text-light nav-link'%>
+              <%= link_to "Musicians", users_path, class: 'text-light nav-link' %>
             </li>
             <li class='nav-item'>
-              <%= link_to "Venue Log In", venue_login_path, class: 'text-light nav-link'%>
+              <%= link_to "Venues", venues_path, class: 'text-light nav-link' %>
             </li>
-          <% end %>
-
-          <li class='nav-item'>
-            <%= link_to "Musicians", users_path, class: 'text-light nav-link' %>
-          </li>
-          <li class='nav-item'>
-            <%= link_to "Venues", venues_path, class: 'text-light nav-link' %>
-          </li>
-          <li class='nav-item'>
-            <%= link_to "Bands", bands_path, class: 'text-light nav-link' %>
-          </li>
-        </ul>
-
+            <li class='nav-item'>
+              <%= link_to "Bands", bands_path, class: 'text-light nav-link' %>
+            </li>
+          </ul>
+        </div>
         <% if user_is_logged_in? || venue_is_logged_in? %>
           <ul class='navbar-nav ml-md-auto'>
             <li class='nav-item'>
