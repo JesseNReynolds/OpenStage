@@ -1,17 +1,31 @@
 <p id="notice"><%= notice %></p>
 
-<h1><%= @user.name %></h1>
+<h1 class='header'><%= @user.name %></h1>
+
+<% if current_user_is_band_leader? && current_user.id != @user.id %>
+    <div class='invite-wrapper'>
+        <%= form_with(url: 'bands/band_members/new', method: 'post') do |form| %>
+            <%= form.hidden_field :user_id, value: @user.id %>
+            <%= form.label "Invite to:" %> 
+            <br>
+            <%= form.collection_select(:band_id, current_user.lead_bands, :id, :name) %>
+            <br>
+            <%= form.submit "Invite", class: 'button' %>
+        <% end %>
+    </div>
+<% end %>
 
 <p><%= @user.bio %></p>
 
-<% if current_user_is_band_leader? && current_user.id != @user.id %>
-    <%= form_with(url: 'bands/band_members/new', method: 'post') do |form| %>
-        <%= form.hidden_field :user_id, value: @user.id %>
-        <%= form.label "Invite to:" %>
-        <%= form.collection_select(:band_id, current_user.lead_bands, :id, :name) %>
-        <%= form.submit "Invite" %>
-    <% end %>
-<% end %>
-<%= link_to "Bio", bio_path %>
 <br>
-<%= link_to 'Back', users_path %>
+
+<p class='centered'>Bands in which <%= @user.name %> is a member</p>
+
+<div class='sub-content-wrapper'>
+    <% @user.bands.each do |band| %>
+        <%= link_to band, class: 'link-card' do%>
+            <h3><%= band.name %></h3>
+            <h5><%= band.bio %></h5>
+        <% end %>
+    <% end %>
+</div>
