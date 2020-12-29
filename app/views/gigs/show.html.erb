@@ -1,7 +1,7 @@
 <h1><%= @gig.time %> at <%= @gig.venue.name %></h1>
 <p id="notice"><%= notice %></p>
 
-<% if current_user_is_band_leader? %>
+<% if current_user_is_band_leader? && @gig.band_id == nil %>
     <%= form_with(url: '/bands/gigs/new', method: 'post') do |form| %>
         <%= form.hidden_field :gig_id, value: @gig.id %>
         <%= form.label "Request as:" %>
