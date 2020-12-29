@@ -17,8 +17,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap');
 
 body{
-    margin: 0px
+    margin: 0px;
+    font-family: 'Oswald', sans-serif;
+    background-color: #7E8987;
 }
+
 .nav-wrapper{
     display:flex;
     flex-direction: row;
@@ -42,4 +45,46 @@ body{
     color: #CC3F0C;
     margin: 15px;
     font-family: 'Oswald', sans-serif;
+}
+
+.content-wrapper{
+    max-width: 800px;
+    border: 1px solid #122c34;
+    border-radius: 5px;
+    margin: auto;
+    background-color: white;
+}
+
+.link-card{
+    border: 2px solid #122c34;
+    margin: 10px;
+    border-radius: 4px;
+    display: block;
+    text-decoration: none;
+}
+
+.link-card > h3{
+    color: #cc3f0c;
+    margin-top: .25em;
+    margin-bottom: .5em;
+    margin-left: 1em;
+}
+
+.link-card > h5{
+    color: #3C1518;
+    margin-left: 3em;
+    margin-top: .5em;
+    margin-bottom: .5em;
+}
+
+.link-card > p{
+    color: black;
+    margin-left: 1.5em;
+    margin-right: 1.5em;
+    margin-top: 0;
+}
+
+.header{
+    text-align: center;
+    color: #3C1518;
 }

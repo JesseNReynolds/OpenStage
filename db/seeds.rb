@@ -54,7 +54,7 @@ venues = Venue.create(
     [
         {name: "Quarks", description: "The best bar in the quadrent!", email: "quark@quarks.com", password: "test", address: "1 Promonade Way", city: "Deep Space Nine", state: "Bajor System"},
 
-        {name: "Sisko's", description: "A charming Creole restaurant. Small stage available indoors or out.", email: "joeseph@siskos.com", password: "test", address: "123 Frenchman Stret", city: "New Orleans", state: "Louisiana"},
+        {name: "Sisko's", description: "A charming Creole restaurant. Small stage available indoors or out.", email: "joeseph@siskos.com", password: "test", address: "123 Frenchman Street", city: "New Orleans", state: "Louisiana"},
 
         {name: "The Coucil Chamber", description: "Dark vibes, great acoustics.", email: "councilchamber@qonos.gov", password: "test", address: "1600 Honor and Glory Boulevard", city: "First City", state: "Q'onos"}
     ]
