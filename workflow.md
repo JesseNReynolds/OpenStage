@@ -46,10 +46,11 @@
 - [ ] For each controller action, refactor with alert for errors and notice for successes, make sure each is present in view.
 
 # Style
-- [ ] Choose colors
+- [x] Choose colors 
         https://coolors.co/122c34-cc3f0c-3c1518-60afff-7e8987
         or
         https://coolors.co/122c34-f0f0c9-3c1518-857e7b-7e8987
+- [x] Navbar
 - [ ] Layout template
 - [ ] First pass styling each page
 
