@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<%= form_with(model: gig, local: true) do |form| %>
+<%= form_with(model: gig, local: true, class: 'invisible-wrapper-column') do |form| %>
   <% if gig.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(gig.errors.count, "error") %> prohibited this gig from being saved:</h2>
@@ -17,12 +17,12 @@
   <%= form.datetime_field :time, min: Date.tomorrow %>
   <br>
   <%= form.label "Duration in minutes" %>
-  <%= form.text_field :duration %>
+  <%= form.text_field :duration, class: 'text-field' %>
   <br>
   <%= form.label "Comments" %>
-  <%= form.text_area :venue_message %>
+  <%= form.text_area :venue_message, class: 'text-area', rows: '10',cols:'80' %>
   <br>
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit class: 'button' %>
   </div>
 <% end %>
