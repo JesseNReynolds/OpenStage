@@ -1,3 +1,7 @@
+<p id="notice"><%= notice %></p>
+
+<h1 class='header'><%= @venue.name %></h1>
+
 <% if @venue.id == current_venue_id %>
     <%= render partial: 'description_form' %>
 <% else %>

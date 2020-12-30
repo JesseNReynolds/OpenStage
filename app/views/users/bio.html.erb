@@ -2,8 +2,6 @@
 
 <h1 class='header'><%= @user.name %></h1>
 
-
-
 <% if @user.id == current_user_id %>
     <%= render partial: 'bio_form' %>
 <% else %>
