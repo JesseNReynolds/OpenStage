@@ -1,4 +1,4 @@
-<%= form_with(model: band, local: true) do |form| %>
+<%= form_with(model: band, local: true, class: 'invisible-wrapper-column') do |form| %>
   <% if band.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(band.errors.count, "error") %> prohibited this band from being saved:</h2>
@@ -12,13 +12,16 @@
   <% end %>
 
   <%= form.label "Name" %>
-  <%= form.text_field :name %>
+  <br>
+  <%= form.text_field :name, class: 'text-field' %>
   <br>
   <%= form.label "Description" %>
-  <%= form.text_area :bio, placeholder: "We play bluegrass and post-psychadelic-funk-metal." %>
+  <br>
+  <%= form.text_area :bio, placeholder: "We play bluegrass and post-psychadelic-funk-metal.", 
+  class: 'text-area', rows: '10',cols:'80' %>
   <br>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit class: 'button'%>
   </div>
 <% end %>

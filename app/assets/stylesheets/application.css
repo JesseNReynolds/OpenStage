@@ -112,7 +112,6 @@ label{
 
 .button {
 	box-shadow:inset 0px 1px 0px 0px #f2551c;
-	background:linear-gradient(to bottom, #CC3F0C 5%, #CC3F0C 100%);
 	background-color:#CC3F0C;
 	border-radius:3px;
 	border:1px solid #942911;
@@ -150,4 +149,20 @@ label{
     display: flex;
     justify-content: space-around;
 
+}
+
+.invisible-wrapper-column{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 1em;
+}
+.text-area{
+    resize: none;
+}
+
+.text-field{
+    width: 70%;
 }

@@ -1,25 +1,33 @@
+<h1 class='header'><%= @band.name %></h1>
+<p><%= @band.bio %></p>
+
 <p id="notice"><%= notice %></p>
 
-<h1><%= @band.name %></h1>
 
-<div>
+<div class='invisible-wrapper'>
+    <% if current_user_is_member_of?(@band.id) && !current_user_leads_this_band? %>
+        <%= button_to "Leave this band", leave_band_path, method: 'delete',
+        params: {band_id: @band.id}, class: 'button' %>
+    <% elsif current_user_leads_this_band? %>
+        <%= link_to "Edit details", edit_band_path, params:{band_id: @band_id}, method: 'get', class: 'button' %>
+    <% end %>
+</div>
+
+<div class='sub-content-wrapper'>
     <% @band.band_members.each do |band_member| %>
         <% if band_member.status == "Accepted" %>
-            <div>
-                <%= band_member.user.name %>
-                <% if current_user_leads_this_band? && @band.leader.id != band_member.user_id %>
-                    <%= button_to "Remove from band", remove_from_band_path, method: 'delete',
-                    params: {user_id: band_member.user_id, band_member_id: band_member.id, band_id: @band.id} %>
+            <%=link_to band_member.user, class: "link-card" do %>
+                <h3><%= band_member.user.name %></h3>
+                <h5><%= band_member.user.bio %></h5>
+                 <% if current_user_leads_this_band? && @band.leader.id != band_member.user_id %>
+                    <div class='invisible-wrapper'>
+                        <%= button_to "Remove from band", remove_from_band_path, method: 'delete', 
+                        params: {user_id: band_member.user_id, band_member_id: band_member.id, 
+                        band_id: @band.id}, class: 'button' %>
+                    </div>
                 <% end %>
-            </div>
+            <% end%>
         <% end %>
     <% end %>
 </div>
 
-<% if current_user_is_member_of?(@band.id) && !current_user_leads_this_band? %>
-    <%= button_to "Leave this band", leave_band_path, method: 'delete',
-     params: {band_id: @band.id} %>
-<% end %>
-
-<%= link_to 'Edit', edit_band_path(@band) %> |
-<%= link_to 'Back', bands_path %>

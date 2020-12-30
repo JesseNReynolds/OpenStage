@@ -2,7 +2,7 @@
 <p id="notice"><%= notice %></p>
 
 <% @gigs.each do |gig| %>
-  <%= link_to gig, class: 'link-card' do%>
+  <%= link_to gig, class: 'link-card' do %>
     <h3><%= gig.time.to_formatted_s(:long_ordinal) %> at <%= gig.venue.name %></h3>
     <h5><%= gig.duration %> minutes </h5>
     <% if gig.band_id != nil%>
