@@ -1,15 +1,11 @@
-<h1>Log in</h1>
+<h1 class='header'>Log in</h1>
 
 <p><%= notice %></p>
 
-<%= form_with url: sessions_path do |form| %>
-
+<%= form_with(url: sessions_path, class: 'invisible-wrapper-column') do |form| %>
     <%= form.label "Email" %>
-    <%= form.text_field :email %>
-    <br>
+    <%= form.text_field :email, class: 'text-field' %>
     <%= form.label "Password" %>
-    <%= form.password_field :password %>
-    <br>
-    <%= form.submit "Log in"%>
-
+    <%= form.password_field :password, class: 'text-field' %>
+    <%= form.submit "Log in", class: 'button'%>
 <% end %>
