@@ -1,4 +1,4 @@
-<%= form_for @user do |form| %>
-    <%= form.text_area :bio %>
-    <%= form.submit "Update bio" %>
+<%= form_for(@user, html: {class: 'invisible-wrapper-column'}) do |form| %>
+    <%= form.text_area :bio, class: 'text-area', rows: '10',cols:'80' %>
+    <%= form.submit "Update bio", class: 'button' %>
 <% end %>

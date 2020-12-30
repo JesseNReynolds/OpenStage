@@ -12,18 +12,18 @@
   <% end %>
 
   <%= form.label "Name" %>
-  <%= form.text_field :name %>
+  <%= form.text_field :name, class: 'text-field' %>
   <br>
   <%= form.label "Email address" %>
-  <%= form.text_field :email %>
+  <%= form.text_field :email, class: 'text-field'  %>
   <br>
   <%= form.label "Password" %>
-  <%= form.text_field :password %>
+  <%= form.text_field :password, class: 'text-field'  %>
   <br>
   <%= form.label "Password confirmation" %>
-  <%= form.text_field :password_confirmation %>
+  <%= form.text_field :password_confirmation, class: 'text-field'  %>
   <br>
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit class: 'button' %>
   </div>
 <% end %>

@@ -2,6 +2,12 @@
 
 <h1 class='header'><%= @user.name %></h1>
 
+<% if current_user.id == @user.id %>
+    <div class='invisible-wrapper'>
+        <%= link_to "Change profile information", edit_user_path(@user), class: 'button'%>
+    </div>
+<% end %>
+
 <% if current_user_is_band_leader? && current_user.id != @user.id %>
     <div class='invite-wrapper'>
         <%= form_with(url: 'bands/band_members/new', method: 'post') do |form| %>
@@ -16,6 +22,11 @@
 <% end %>
 
 <p><%= @user.bio %></p>
+<% if current_user.id == @user.id %>
+    <div class='invisible-wrapper'>
+        <%= link_to "Edit bio", bio_path(@user), class: 'button'%>
+    </div>
+<% end %>
 
 <br>
 

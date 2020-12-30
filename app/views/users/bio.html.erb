@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<h1><%= @user.name %></h1>
+<h1 class='header'><%= @user.name %></h1>
 
 
 
@@ -9,5 +9,3 @@
 <% else %>
     <p><%= @user.bio %></p>
 <% end %>
-
-<%= link_to 'Back', users_path %>

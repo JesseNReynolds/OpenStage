@@ -66,7 +66,7 @@ class UsersController < ApplicationController
 
   # GET /users/1/edit
   def edit
-    if params[:id] == current_user_id
+    if @user.id == current_user.id
     else
       redirect_to users_url, notice: "You can only edit your own profile."
     end
