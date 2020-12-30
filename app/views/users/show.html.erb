@@ -40,3 +40,18 @@
         <% end %>
     <% end %>
 </div>
+
+<p class='centered'><%= @user.name.possessive %> upcoming gigs.</p>
+
+<div class='sub-content-wrapper'>
+    <% @user.gigs.each do |gig| %>
+        <% if gig.time > Time.now %>
+            <%= link_to gig, class: 'link-card' do %>
+                <h3><%= gig.time.to_formatted_s(:long_ordinal) %> at <%= gig.venue.name %></h3>
+                <h5>Appearing as a member of <%= gig.band.name %>.</h5>
+                <h5><%= gig.duration %> minutes </h5>
+                <p><%= gig.venue_message %></p>
+            <% end %>
+        <% end %>
+    <% end %>
+</div>
