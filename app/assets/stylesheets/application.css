@@ -124,6 +124,7 @@ label{
 	text-decoration:none;
     text-shadow:0px 1px 0px #854629;
     margin-top: .5em;
+    margin-bottom: .5em;
 }
 .button :hover {
 	background:linear-gradient(to bottom, #bc3315 5%, #CC3F0C 100%);

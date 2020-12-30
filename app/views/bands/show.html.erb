@@ -13,6 +13,22 @@
     <% end %>
 </div>
 
+<p class='centered'><%= @band.name.possessive %> upcoming gigs.</p>
+
+<div class='sub-content-wrapper'>
+    <% @band.gigs.each do |gig| %>
+        <% if gig.time > Time.now %>
+            <%= link_to gig, class: 'link-card' do %>
+                <h3><%= gig.time.to_formatted_s(:long_ordinal) %> at <%= gig.venue.name %></h3>
+                <h5><%= gig.duration %> minutes </h5>
+                <p><%= gig.venue_message %></p>
+            <% end %>
+        <% end %>
+    <% end %>
+</div>
+
+<p class='centered'>Members of <%= @band.name %></p>
+
 <div class='sub-content-wrapper'>
     <% @band.band_members.each do |band_member| %>
         <% if band_member.status == "Accepted" %>

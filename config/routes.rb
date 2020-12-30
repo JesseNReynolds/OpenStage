@@ -10,7 +10,8 @@ Rails.application.routes.draw do
   post '/venues/session', to: 'sessions#venue_create', as: 'venue_session'
   get '/logout', to: 'sessions#destroy', as: 'logout'
 
-  get '/venue/:id/description', to: 'venues#description', as: 'description'
+  get '/venues/:id/description', to: 'venues#description', as: 'description'
+  get '/venues/signup', to: 'venues#new', as: 'venue_signup'
   resources :venues do
     resources :gigs, only: [:index]
   end
@@ -25,12 +26,13 @@ Rails.application.routes.draw do
   get '/gigs/available', to: 'gigs#available', as: 'available_gigs'
   resources :gigs
 
+  post '/users/signup', to: 'users#new', as: 'user_signup'
   post '/users/invites/accept', to: 'users#accept_invite', as: 'accept_invite'
   post '/users/bands/band_members/new', to: 'users#invite_member', as: 'invite_member'
   get '/users/invites', to: 'users#invites', as: 'user_invites'
   delete '/band_members/remove', to: 'users#remove_from_band', as: 'remove_from_band'
   delete '/band_members/leave', to: 'users#leave_band', as: 'leave_band'
-  resources :users do
+  resources :users, except: [:new] do
     resources :gigs, only: [:index] 
     resources :bands, only: [:index]
   end
