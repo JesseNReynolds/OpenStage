@@ -1,9 +1,19 @@
 <p id="notice"><%= notice %></p>
 
-<%= @venue.name %>
+<h1 class='header'><%= @venue.name %></h1>
+<% if current_venue_id == @venue.id %>
+    <div class='invisible-wrapper'>
+        <%= link_to "Change profile information", edit_venue_path(@venue), class: 'button'%>
+    </div>
+<% end %>
 <br>
+
 <%= @venue.description %>
-<%= link_to "Description", description_path(@venue) %>
 <br>
-<%= link_to 'Edit', edit_venue_path(@venue) %> |
-<%= link_to 'Back', venues_path %>
+
+<% if current_venue_id == @venue.id %>
+    <div class='invisible-wrapper'>
+        <%= link_to "Edit Description", description_path(@venue), class: 'button' %>
+    </div>
+<% end %>
+

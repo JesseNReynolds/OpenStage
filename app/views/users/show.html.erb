@@ -2,7 +2,7 @@
 
 <h1 class='header'><%= @user.name %></h1>
 
-<% if current_user.id == @user.id %>
+<% if current_user_id == @user.id %>
     <div class='invisible-wrapper'>
         <%= link_to "Change profile information", edit_user_path(@user), class: 'button'%>
     </div>
@@ -22,7 +22,7 @@
 <% end %>
 
 <p><%= @user.bio %></p>
-<% if current_user.id == @user.id %>
+<% if current_user_id == @user.id %>
     <div class='invisible-wrapper'>
         <%= link_to "Edit bio", bio_path(@user), class: 'button'%>
     </div>
