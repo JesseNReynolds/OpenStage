@@ -4,8 +4,8 @@
 
 <%= form_with(url: sessions_path, class: 'invisible-wrapper-column') do |form| %>
     <%= form.label "Email" %>
-    <%= form.text_field :email, class: 'text-field' %>
+    <%= form.text_field :email, class: 'text-field-medium' %>
     <%= form.label "Password" %>
-    <%= form.password_field :password, class: 'text-field' %>
+    <%= form.password_field :password, class: 'text-field-medium' %>
     <%= form.submit "Log in", class: 'button'%>
 <% end %>

@@ -167,3 +167,15 @@ label{
 .text-field{
     width: 70%;
 }
+
+.text-field-medium{
+    width: 20em;
+}
+
+.indented{
+    margin-left: 3em;
+}
+
+.pending-message{
+    color: #CC3F0C !important;
+}

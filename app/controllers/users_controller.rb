@@ -57,7 +57,7 @@ class UsersController < ApplicationController
 
   # GET /users/new
   def new
-    if user_is_logged_in
+    if user_is_logged_in?
       redirect_to users_path, notice: "You can't create an account because you're already logged in to your account."
     else
       @user = User.new

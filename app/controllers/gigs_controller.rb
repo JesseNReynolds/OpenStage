@@ -48,6 +48,7 @@ class GigsController < ApplicationController
     end
 
     def decline
+        byebug
         @gig.approval = nil
         @gig.band_id = nil
         if @gig.save

@@ -1,4 +1,4 @@
-<%= form_with(model: venue, local: true) do |form| %>
+<%= form_with(model: venue, local: true, class: 'invisible-wrapper-column') do |form| %>
   <% if venue.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(venue.errors.count, "error") %> prohibited this venue from being saved:</h2>
@@ -12,28 +12,27 @@
   <% end %>
 
   <%= form.label "Name" %>
-  <%= form.text_field :name %>
-  <br>
-  <%= form.label "Email address" %>
-  <%= form.text_field :email %>
-  <br>  
-  <%= form.label "Physical address" %>
-  <%= form.text_field :address %>
-  <br>
-  <%= form.label "City" %>
-  <%= form.text_field :city %>
-  <br>
-  <%= form.label "State" %>
-  <%= form.text_field :state %>
-  <br>
-  <%= form.label "Password" %>
-  <%= form.text_field :password %>
-  <br>
-  <%= form.label "Password confirmation" %>
-  <%= form.text_field :password_confirmation %>
-  <br>
+  <%= form.text_field :name, class: 'text-field-medium' %>
 
-  <div class="actions">
-    <%= form.submit %>
-  </div>
+  <%= form.label "Email address" %>
+  <%= form.text_field :email, class: 'text-field-medium' %>
+  
+  <%= form.label "Physical address" %>
+  <%= form.text_field :address, class: 'text-field-medium' %>
+
+  <%= form.label "City" %>
+  <%= form.text_field :city, class: 'text-field-medium' %>
+
+  <%= form.label "State" %>
+  <%= form.text_field :state, class: 'text-field-medium' %>
+
+  <%= form.label "Password" %>
+  <%= form.text_field :password, class: 'text-field-medium' %>
+
+  <%= form.label "Password confirmation" %>
+  <%= form.text_field :password_confirmation, class: 'text-field-medium' %>
+
+
+
+  <%= form.submit class: 'button'%>
 <% end %>

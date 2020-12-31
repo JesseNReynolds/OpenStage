@@ -1,15 +1,23 @@
-<h1><%= @gig.time %> at <%= @gig.venue.name %></h1>
+<h1 class='header'><%= @gig.time.to_formatted_s(:long_ordinal) %> at <%= @gig.venue.name %></h1>
 <p id="notice"><%= notice %></p>
-
+<h5 class='indented'><%= @gig.duration %></h5>
+<p><%= @gig.venue_message %></p>
 <% if current_user_is_band_leader? && @gig.band_id == nil %>
     <%= form_with(url: '/bands/gigs/new', method: 'post') do |form| %>
         <%= form.hidden_field :gig_id, value: @gig.id %>
         <%= form.label "Request as:" %>
         <%= form.collection_select(:band_id, current_user.lead_bands, :id, :name) %>
-        <%= form.submit "Request" %>
+        <%= form.submit "Request", class: 'button' %>
     <% end %>
 <% end %>
 
+
 <% if @gig.venue_id == current_venue_id %>
-    <%= link_to 'Destroy', @gig, method: :delete, data: { confirm: 'Are you sure?' } %>
+    <div class='invisible-wrapper-column'>
+    <% if @gig.approval == "Pending" %>
+        <%= button_to "Accept", accept_gig_path(@gig), class: 'button' %>
+        <%= button_to "Decline", decline_gig_path(@gig), class: 'button' %>
+    <% end %>
+        <%= link_to 'Destroy', @gig, method: :delete, data: { confirm: 'Are you sure?' }, class: 'button' %>
+    </div>
 <% end %>

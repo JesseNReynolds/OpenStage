@@ -21,12 +21,12 @@ Rails.application.routes.draw do
     resources :gigs, only: [:index]
   end
 
-  post '/gigs/accept', to: 'gigs#accept', as: 'accept_gig'
-  post '/gigs/decline', to: 'gigs#decline', as: 'decline_gig'
+  post '/gigs/:id/accept', to: 'gigs#accept', as: 'accept_gig'
+  post '/gigs/:id/decline', to: 'gigs#decline', as: 'decline_gig'
   get '/gigs/available', to: 'gigs#available', as: 'available_gigs'
   resources :gigs
 
-  post '/users/signup', to: 'users#new', as: 'user_signup'
+  get '/users/signup', to: 'users#new', as: 'user_signup'
   post '/users/invites/accept', to: 'users#accept_invite', as: 'accept_invite'
   post '/users/bands/band_members/new', to: 'users#invite_member', as: 'invite_member'
   get '/users/invites', to: 'users#invites', as: 'user_invites'

@@ -20,7 +20,7 @@ class VenuesController < ApplicationController
 
   # GET /venues/new
   def new
-    if venue_is_logged_in
+    if venue_is_logged_in?
       redirect_to venues_path, notice: "You cannot create a new venue account, you're already logged in as a venue."
     else
       @venue = Venue.new

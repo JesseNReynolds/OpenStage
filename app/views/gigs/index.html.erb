@@ -5,13 +5,12 @@
   <%= link_to gig, class: 'link-card' do %>
     <h3><%= gig.time.to_formatted_s(:long_ordinal) %> at <%= gig.venue.name %></h3>
     <h5><%= gig.duration %> minutes </h5>
-    <% if gig.band_id != nil%>
-        <h5><%= gig.band.name %></h5>
-        <% if gig.venue_id == current_venue_id && gig.approval == "Pending" %>
-        <%= button_to "Accept", accept_gig_path, params: {id: gig.id} %>
-        <%= button_to "Decline", decline_gig_path, params: {id: gig.id} %>
-        <% end %>
-    <% end %>
     <p><%= gig.venue_message %></p>
+    <% if gig.band_id != nil%>
+      <h5><%= gig.band.name %></h5>
+      <% if gig.approval == 'Pending' %>
+        <h5 class='pending-message'>This gig is pending, click to accept or deny.</h5>
+      <% end%>
+    <% end %>
   <% end %>
 <% end %>
