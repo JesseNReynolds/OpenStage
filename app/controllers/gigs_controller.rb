@@ -41,20 +41,19 @@ class GigsController < ApplicationController
     def accept
         @gig.approval = "Approved"
         if @gig.save
-            redirect_to gigs_path, notice: "Gig approved"
+            redirect_to venue_gigs_path(current_venue), notice: "Gig approved"
         else
-            redirect_to @gig, notice: "Something went wrong. Please try again later."
+            redirect_to venue_gigs_path(current_venue), notice: "Something went wrong. Please try again later."
         end
     end
 
     def decline
-        byebug
         @gig.approval = nil
         @gig.band_id = nil
         if @gig.save
-            redirect_to @gig, notice: "Gig denied. Gig status set to available. To remove the gig posting, delete this gig."
+            redirect_to venue_gigs_path(current_venue), notice: "Gig denied. Gig status set to available. To remove the gig posting, delete this gig."
         else
-            redirect_to @gig, notice: "Something went wrong. Please try again later."
+            redirect_to venue_gigs_path(current_venue), notice: "Something went wrong. Please try again later."
         end
     end
 

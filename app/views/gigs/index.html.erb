@@ -7,17 +7,17 @@
       <h3><%= gig.time.to_formatted_s(:long_ordinal) %> at <%= gig.venue.name %></h3>
       <h5><%= gig.duration %> minutes </h5>
       <p><%= gig.venue_message %></p>
-      <% end %>
+    <% end %>
     <% if gig.band_id != nil%>
       <h3><%= gig.band.name %></h3>
-      <% if gig.venue.id == current_venue_id %>
-        <div class='invisible-wrapper'>
+    <% end %>
+    <% if gig.venue.id == current_venue_id %>
+      <div class='invisible-wrapper'>
         <% if gig.approval == "Pending" %>
           <%= button_to "Accept", accept_gig_path(gig), class: 'button' %>
           <%= button_to "Decline", decline_gig_path(gig), class: 'button' %>
         <% end %>
-      <% end %>
-      <%= link_to 'Destroy', gig, method: :delete, data: { confirm: 'Are you sure?' }, class: 'button' %>
+        <%= button_to "Destroy", gig, method: :delete, data: { confirm: 'Are you sure?' }, class: 'button' %>
       </div>
     <% end %>
   </div>
