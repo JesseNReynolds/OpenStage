@@ -32,17 +32,22 @@
 <div class='sub-content-wrapper'>
     <% @band.band_members.each do |band_member| %>
         <% if band_member.status == "Accepted" %>
-            <%=link_to band_member.user, class: "link-card" do %>
+            <div class='link-card-wrapper'>
+            <%=link_to band_member.user, class: "link-card-no-border" do %>
                 <h3><%= band_member.user.name %></h3>
                 <h5><%= band_member.user.bio %></h5>
-                 <% if current_user_leads_this_band? && @band.leader.id != band_member.user_id %>
-                    <div class='invisible-wrapper'>
-                        <%= button_to "Remove from band", remove_from_band_path, method: 'delete', 
-                        params: {user_id: band_member.user_id, band_member_id: band_member.id, 
-                        band_id: @band.id}, class: 'button' %>
-                    </div>
-                <% end %>
+            <% end %>
+            <% if current_user_leads_this_band? && @band.leader.id != band_member.user_id %>
+                <div class='invisible-wrapper-column'>
+                    <%= button_to "Remove from band", remove_from_band_path, 
+                    params: {user_id: band_member.user.id, 
+                    band_member_id: band_member.id, 
+                    band_id: band_member.band.id
+                    }, method: 'delete',
+                    class: 'button'%>
+                </div>
             <% end%>
+            </div>
         <% end %>
     <% end %>
 </div>
