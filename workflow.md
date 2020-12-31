@@ -51,8 +51,8 @@
         or
         https://coolors.co/122c34-f0f0c9-3c1518-857e7b-7e8987
 - [x] Navbar
-- [ ] Layout template
-- [ ] First pass styling each page
+- [x] Layout template
+- [x] First pass styling each page
 
 # Polish
 - [ ] City and State check against array of known good cities and states
