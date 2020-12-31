@@ -13,7 +13,7 @@
 
 
 <% if @gig.venue_id == current_venue_id %>
-    <div class='invisible-wrapper-column'>
+    <div class='invisible-wrapper'>
     <% if @gig.approval == "Pending" %>
         <%= button_to "Accept", accept_gig_path(@gig), class: 'button' %>
         <%= button_to "Decline", decline_gig_path(@gig), class: 'button' %>
