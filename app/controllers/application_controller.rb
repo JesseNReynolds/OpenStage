@@ -1,12 +1,21 @@
 class ApplicationController < ActionController::Base
     helper_method :venue_is_logged_in?, :current_venue, :current_venue_id,
      :user_is_logged_in?, :current_user_id, :current_user, :current_user_is_band_leader?,
-     :current_user_leads_this_band?, :user_invites, :current_user_is_member_of?
+     :current_user_leads_this_band?, :user_invites, :current_user_is_member_of?,
+     :venue_future_gigs
     def home
         render '/home'
     end
 
     private
+
+    def venue_future_gigs(id)
+        venue = Venue.find(id)
+        upcoming = venue.gigs.find_all do |gig|
+            gig.time > Time.now
+        end
+        return upcoming
+    end
 
     def user_invites
         BandMember.where({user_id: current_user_id, status: "pending"})

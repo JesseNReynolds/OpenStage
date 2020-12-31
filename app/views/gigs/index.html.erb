@@ -2,15 +2,23 @@
 <p id="notice"><%= notice %></p>
 
 <% @gigs.each do |gig| %>
-  <%= link_to gig, class: 'link-card' do %>
-    <h3><%= gig.time.to_formatted_s(:long_ordinal) %> at <%= gig.venue.name %></h3>
-    <h5><%= gig.duration %> minutes </h5>
-    <p><%= gig.venue_message %></p>
+  <div class='link-card-wrapper'>
+    <%= link_to gig, class: 'link-card-no-border' do %>
+      <h3><%= gig.time.to_formatted_s(:long_ordinal) %> at <%= gig.venue.name %></h3>
+      <h5><%= gig.duration %> minutes </h5>
+      <p><%= gig.venue_message %></p>
+      <% end %>
     <% if gig.band_id != nil%>
-      <h5><%= gig.band.name %></h5>
-      <% if gig.approval == 'Pending' %>
-        <h5 class='pending-message'>This gig is pending, click to accept or deny.</h5>
-      <% end%>
+      <h3><%= gig.band.name %></h3>
+      <% if gig.venue.id == current_venue_id %>
+        <div class='invisible-wrapper'>
+        <% if gig.approval == "Pending" %>
+          <%= button_to "Accept", accept_gig_path(gig), class: 'button' %>
+          <%= button_to "Decline", decline_gig_path(gig), class: 'button' %>
+        <% end %>
+      <% end %>
+      <%= link_to 'Destroy', gig, method: :delete, data: { confirm: 'Are you sure?' }, class: 'button' %>
+      </div>
     <% end %>
-  <% end %>
+  </div>
 <% end %>

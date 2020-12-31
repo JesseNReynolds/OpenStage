@@ -117,6 +117,14 @@ margin-left: 2em;
     text-decoration: none;
 }
 
+.link-card-wrapper > h3{
+    color: #cc3f0c;
+    margin-top: .25em;
+    margin-bottom: .5em;
+    margin-left: 1em;
+    text-decoration: none;
+}
+
 .link-card-no-border > h5{
     color: #3C1518;
     margin-left: 3em;

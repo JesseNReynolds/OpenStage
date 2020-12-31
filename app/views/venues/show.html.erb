@@ -6,11 +6,8 @@
         <%= link_to "Change profile information", edit_venue_path(@venue), class: 'button'%>
     </div>
 <% end %>
-<br>
 
-<%= @venue.description %>
-<br>
-
+<p><%= @venue.description %><p>
 <% if current_venue_id == @venue.id %>
     <div class='invisible-wrapper'>
         <%= link_to "Edit Description", description_path(@venue), class: 'button' %>

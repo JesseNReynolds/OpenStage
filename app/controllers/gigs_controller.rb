@@ -10,8 +10,8 @@ class GigsController < ApplicationController
     def index
         if params[:venue_id]
             venue = Venue.find(params[:venue_id])
-            @gigs = venue.gigs
-            @header = "Gigs at #{venue.name}"
+            @gigs = venue_future_gigs(params[:venue_id])
+            @header = "Upcoming gigs at #{venue.name}"
         elsif params[:band_id]
             band = Band.find(params[:band_id])
             @gigs = band.gigs
