@@ -1,14 +1,7 @@
-# Hopeful schedule
-
-        Monday:
-                Cleanup
-                Style
-
-        Tuesday:
-                oauth
-                Host on Heroku
                 
 # What's next:
+
+# Core function:
 - [x] Users
 -   [x] can sign up
 -   [x] can sign in... and out
