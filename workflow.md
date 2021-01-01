@@ -41,10 +41,6 @@
 -   [x] can be denied
 -   [x] if denied, they become available with no associated band
 
-# Cleanup
-- [ ] Visit each route and make sure it's present and relevant. Delete, add, or refactor as needed.
-- [ ] For each controller action, refactor with alert for errors and notice for successes, make sure each is present in view.
-
 # Style
 - [x] Choose colors 
         https://coolors.co/122c34-cc3f0c-3c1518-60afff-7e8987
@@ -56,4 +52,6 @@
 
 # Polish
 - [ ] City and State check against array of known good cities and states
+- [ ] Band deletion with logic similar to the band-destruction built in to user deletion
+- [ ] Venue deletion with gig-destruction
 
