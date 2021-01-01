@@ -1,3 +1,8 @@
 <h1 class='header'>Editing Profile</h1>
 
 <%= render 'form', user: @user %>
+<div class='invisible-wrapper'>
+    <%= button_to "Delete Account", @user, method: 'delete', data: 
+    {confirm: "Delete your account? You can always make a new account, but all bands you lead will be deleted and your band memberships will be aswell." }, 
+    class: 'button' %>
+</div>

@@ -100,7 +100,15 @@ class UsersController < ApplicationController
 
   # DELETE /users/1
   def destroy
-    if params[:id] == current_user_id
+    if params[:id].to_i == current_user_id
+      
+      if current_user_is_band_leader?
+        @user.lead_bands.each do |band|
+          band.clear_associations_before_deletion
+          band.delete
+        end
+      end
+      
       session[:user_id] = nil
       @user.destroy
       redirect_to users_url, notice: 'You deleted your account.'
