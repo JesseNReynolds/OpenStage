@@ -2,6 +2,8 @@ Rails.application.routes.draw do
 
   root 'application#home'
 
+  get '/auth/facebook/callback', to: 'sessions#facebook_create', as: 'facebook_login'
+
   get '/venue-with-most-gigs', to: 'venues#most_gigs', as: 'most_gigginest_venue'
 
   resources :sessions, only: [:create]
