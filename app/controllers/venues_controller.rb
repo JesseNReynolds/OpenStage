@@ -54,7 +54,7 @@ class VenuesController < ApplicationController
       if @venue.update(venue_params)
         redirect_to @venue, notice: 'Venue was successfully updated.'
       else
-        render :edit 
+        render :edit, notice: "Something went wrong, try again later."
       end
 
   end
@@ -78,7 +78,7 @@ class VenuesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def venue_params
-      params.require(:venue).permit(:name, :email, :address, :city, :state, :password, :password_confirmation)
+      params.require(:venue).permit(:name, :email, :address, :city, :state, :password, :password_confirmation, :description)
     end
 
 end
