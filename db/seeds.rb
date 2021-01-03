@@ -109,18 +109,18 @@ band_members = BandMember.create(
 
 gigs = Gig.create(
     [
-        {band_id: 1, venue_id: 1, approval: nil, venue_message: "Tuesday night at Quarks!", time: 1609869600, duration: 90},
+        {band_id: 1, venue_id: 1, approval: nil, venue_message: "Tuesday night at Quarks!", time: DateTime.new(2021, 2, 5, 19), duration: 90},
         
-        {band_id: 3, venue_id: 1, approval: nil, venue_message: "Tuesday night at Quarks!", time: 1610474400, duration: 90},
+        {band_id: 3, venue_id: 1, approval: nil, venue_message: "Tuesday night at Quarks!", time: DateTime.new(2021, 2, 12, 19), duration: 90},
         
-        {band_id: 4, venue_id: 1, approval: nil, venue_message: "Tuesday night at Quarks!", time: 1611079200, duration: 90},
+        {band_id: 4, venue_id: 1, approval: nil, venue_message: "Tuesday night at Quarks!", time: DateTime.new(2021, 2, 19, 19), duration: 90},
     
-        {band_id: 2, venue_id: 1, approval: nil, venue_message: "Tuesday night at Quarks!", time: 1611684000, duration: 90},
+        {band_id: 2, venue_id: 1, approval: nil, venue_message: "Tuesday night at Quarks!", time: DateTime.new(2021, 2, 26, 19), duration: 90},
     
-        {band_id: nil, venue_id: 1, approval: nil, venue_message: "Tuesday night at Quarks!", time: 1612288800, duration: 90},
+        {band_id: nil, venue_id: 1, approval: nil, venue_message: "Tuesday night at Quarks!", time: DateTime.new(2021, 3, 2, 19), duration: 90},
         
-        {band_id: nil, venue_id: 2, approval: nil, venue_message: "Night before MariGras!", time: 1613419200, duration: 60},
+        {band_id: nil, venue_id: 2, approval: nil, venue_message: "Night before MariGras!", time: DateTime.new(2021, 2, 16, 19), duration: 60},
         
-        {band_id: nil, venue_id: 3, approval: nil, venue_message: "Help us celebrate Qo'bo'val!", time: 1615064400, duration: 120},
+        {band_id: nil, venue_id: 3, approval: nil, venue_message: "Help us celebrate Qo'bo'val!", time: DateTime.new(2021, 4, 15, 21), duration: 120},
     ]
 )
