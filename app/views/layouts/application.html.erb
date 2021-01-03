@@ -25,6 +25,9 @@
         <li>
           <%= link_to "Your Gigs", user_gigs_path(current_user), class: 'nav-link' %>
         </li>
+        <li>
+          <%= link_to "Band Invites", user_invites_path, class: 'nav-link' %>
+        </li>
 
         <% if current_user_is_band_leader? %>
           <li>

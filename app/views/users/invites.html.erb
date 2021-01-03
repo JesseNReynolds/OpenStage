@@ -1,10 +1,21 @@
+<h1 class='header'>Pending Invites</h1>
+
 <p id="notice"><%= notice %></p>
 
+
+<% p = false %>
 <% user_invites.each do |invite|%>
-    <div>
-        <%= invite.band.name %>
-        <% if invite.user_id == current_user_id %>
-            <%= button_to "Accept", accept_invite_path, params: {id: invite.id} %>
+    <% p = true %>
+    <div class="link-card-wrapper">
+        <%= link_to invite.band, class: 'link-card-no-border' do %>
+            <h3><%= invite.band.name %></h3>
+            <p><%= invite.band.bio %></p>
         <% end %>
+        <div class='invisible-wrapper'>
+            <%= button_to "Accept", accept_invite_path, params: {id: invite.id}, class: 'button' %>
+        </div>
     </div>
-<%end %>
+<% end %>
+<% if p == false %>
+    <p>You don't have any invites right now.</p>
+<% end %>
