@@ -1,6 +1,7 @@
 # OpenStage
 ## What? 
 A site that allows Users to form bands, and book those bands on avaialable gigs posted by Venues.
+[Short video demo](https://youtu.be/n6Mdsfsum3Y)
 ## Why?
 I built this project as a learning experience and a demonstration of experience with Rails and Active Record.
 ## How?
